@@ -31,14 +31,17 @@ namespace api.Endpoints.Article
         public async override  Task<ActionResult<ArticleResponse>> HandleAsync([FromRoute] ArticleRequest request,
             CancellationToken cancellationToken = new CancellationToken())
         {
-           return new  OkObjectResult( new ArticleResponse
-            {
-                Content = "blah blah blah",
-                Description = "This is a Fine Description",
-                Published = DateTime.Now.AddHours(-10),
-                Summary = "this is a fine Summary",
-                SubHeading = "This is a sub heading"
-            });
+            return await Task.Run(() =>
+                new OkObjectResult(new ArticleResponse
+                {
+                    Content = "blah blah blah",
+                    Description = "This is a Fine Description",
+                    Published = DateTime.Now,
+                    Summary = "this is a fine Summary",
+                    SubHeading = "This is a sub heading"
+
+                }), cancellationToken);
+
         }
     }
 }
