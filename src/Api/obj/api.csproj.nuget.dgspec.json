@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/woody/code/Blog-Tutorials/src/api/api.csproj": {}
+  },
+  "projects": {
+    "/home/woody/code/Blog-Tutorials/src/api/api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/woody/code/Blog-Tutorials/src/api/api.csproj",
+        "projectName": "api",
+        "projectPath": "/home/woody/code/Blog-Tutorials/src/api/api.csproj",
+        "packagesPath": "/home/woody/.nuget/packages/",
+        "outputPath": "/home/woody/code/Blog-Tutorials/src/api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/woody/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Ardalis.ApiEndpoints": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Dawn.Guard": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Threenine.Data": {
+              "target": "Package",
+              "version": "[2.0.219, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
