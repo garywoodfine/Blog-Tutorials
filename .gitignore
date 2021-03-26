@@ -351,3 +351,9 @@
      
      # Rider files
      .idea/
+/src/Api/bin/
+/src/Api/obj/
+/tests/Api.Integration.Tests/bin/
+/tests/Api.Integration.Tests/obj/
+/tests/Api.Unit.Tests/bin/
+/tests/Api.Unit.Tests/obj/
