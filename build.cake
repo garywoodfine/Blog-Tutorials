@@ -16,7 +16,7 @@ Task("Build")
      var buildSettings = new DotNetCoreBuildSettings {
                         Configuration = configuration,
                        };
-     var projects = GetFiles("./src/*.csproj");
+     var projects = GetFiles("./**/*.csproj");
      foreach(var project in projects )
      {
          Information($"Building {project.ToString()}");
