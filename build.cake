@@ -45,7 +45,7 @@ Task("Test")
                                   Configuration = configuration,
                                   NoBuild = true,
                               };
-     var projects = GetFiles("./tests/*.csproj");
+     var projects = GetFiles("./tests/*/*.csproj");
      foreach(var project in projects )
      {
        Information($"Running Tests : { project.ToString()}");

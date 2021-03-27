@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "src\Api\Api.csproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{136E0164-2163-4D41-BFDB-4462D6ED02C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Unit.Tests", "tests\Api.Unit.Tests.csproj", "{0E7C4D8F-F48E-41D5-843E-694517B89B3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Unit.Tests", "tests\Api.Unit.Tests\Api.Unit.Tests.csproj", "{0E7C4D8F-F48E-41D5-843E-694517B89B3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{41DEB0DF-FB59-4BBF-92F9-E35AB4A1C982}"
 ProjectSection(SolutionItems) = preProject
