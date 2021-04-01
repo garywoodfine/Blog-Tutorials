@@ -11,7 +11,8 @@ namespace Api.Attributes
         {
             Method = method;
             ClassName = className;
-            Console.WriteLine($"Telemetry logging call {className}  {method}");
+         
+
         }
     }
 }

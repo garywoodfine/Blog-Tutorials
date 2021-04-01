@@ -29,7 +29,7 @@ namespace Api.Endpoints.Article
         ]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ArticleResponse))]
         [Produces("application/json")]
-        [Telemetry(nameof(Get), nameof(Get.HandleAsync))]
+        [Telemetry(nameof(Get), nameof(HandleAsync))]
         public async override  Task<ActionResult<ArticleResponse>> HandleAsync([FromRoute] ArticleRequest request,
             CancellationToken cancellationToken = new CancellationToken())
         {
