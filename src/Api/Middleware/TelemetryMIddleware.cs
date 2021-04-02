@@ -23,11 +23,7 @@ namespace Api.Middleware
             var attribute = endpoint?.Metadata.GetMetadata<TelemetryAttribute>();
             if (attribute != null)
             {
-                var className = attribute.ClassName;
-                var methodName = attribute.Method;
-            
-                Console.WriteLine($"Telemetry logging call {className}  {methodName}");
-              
+               Console.WriteLine($"Telemetry logging call { endpoint.DisplayName}");
             }
         }
     }
