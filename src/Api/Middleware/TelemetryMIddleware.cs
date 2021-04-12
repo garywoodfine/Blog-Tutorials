@@ -1,15 +1,17 @@
 using System;
 using System.Threading.Tasks;
 using Api.Attributes;
+using Dawn;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
+using Serilog;
 
 namespace Api.Middleware
 {
     public class TelemetryMiddleware
     {
         private RequestDelegate _next;
-
+        private static readonly ILogger Log = Serilog.Log.ForContext<TelemetryAttribute>();
         public TelemetryMiddleware(RequestDelegate next)
         {
             _next = next;
@@ -23,7 +25,8 @@ namespace Api.Middleware
             var attribute = endpoint?.Metadata.GetMetadata<TelemetryAttribute>();
             if (attribute != null)
             {
-               Console.WriteLine($"Telemetry logging call { endpoint.DisplayName}");
+              
+                Log.Information($"Telemetry logging call { endpoint}");
             }
         }
     }
