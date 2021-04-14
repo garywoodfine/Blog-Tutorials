@@ -3,6 +3,7 @@
   "profiles": {
     "LaunchProfile": {
       "commandName": "Project",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_URLS": "http://localhost:5000;https://localhost:5001",
         "ASPNETCORE_ENVIRONMENT": "Development"
