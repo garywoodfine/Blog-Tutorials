@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Endpoints.Article.Request
+namespace Cms.Endpoints.Article.Request
 {
     public class ArticleRequest
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Api.Endpoints.Article.Response
+namespace Cms.Endpoints.Article.Response
 {
     public class ArticleResponse
     {

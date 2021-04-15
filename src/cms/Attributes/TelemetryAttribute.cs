@@ -1,5 +1,6 @@
 using System;
-namespace Api.Attributes
+
+namespace Cms.Attributes
 {
     public class TelemetryAttribute : Attribute
     {

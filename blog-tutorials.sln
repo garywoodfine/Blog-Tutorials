@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "src\Api\Api.csproj", "{ACF94492-31F1-470D-977D-E4E0C62807EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cms", "src\cms\cms.csproj", "{ACF94492-31F1-470D-977D-E4E0C62807EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{136E0164-2163-4D41-BFDB-4462D6ED02C0}"
 EndProject

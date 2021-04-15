@@ -1,15 +1,15 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Api.Attributes;
-using Api.Endpoints.Article.Request;
-using Api.Endpoints.Article.Response;
 using Ardalis.ApiEndpoints;
+using Cms.Attributes;
+using Cms.Endpoints.Article.Request;
+using Cms.Endpoints.Article.Response;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace Api.Endpoints.Article
+namespace Cms.Endpoints.Article
 {
     [Route("/article")]
     public class Get : BaseAsyncEndpoint

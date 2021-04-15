@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
-using Api.Endpoints.Article;
-using Api.Endpoints.Article.Request;
+using Cms.Endpoints.Article;
+using Cms.Endpoints.Article.Request;
 using FizzWare.NBuilder;
 using Shouldly;
 using Xunit;

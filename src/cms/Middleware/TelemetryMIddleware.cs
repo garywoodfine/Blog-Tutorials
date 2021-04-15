@@ -1,12 +1,10 @@
-using System;
 using System.Threading.Tasks;
-using Api.Attributes;
-using Dawn;
+using Cms.Attributes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Serilog;
 
-namespace Api.Middleware
+namespace Cms.Middleware
 {
     public class TelemetryMiddleware
     {
