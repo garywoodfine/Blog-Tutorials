@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-         <ProjectReference Include="..\..\src\cms\cms.csproj" />
+         <ProjectReference Include="..\..\src\Cms\Cms.csproj" />
     </ItemGroup>
 
 </Project>
