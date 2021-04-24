@@ -32,7 +32,10 @@ namespace Cms
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .UseSerilog()
+                .UseSerilog((hostContext, LoggerConfiguration) =>
+                {
+                    LoggerConfiguration.ReadFrom.Configuration(hostContext.Configuration);
+                })
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }
 }

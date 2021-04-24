@@ -13,9 +13,6 @@ namespace Cms
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(configuration)
-                .CreateLogger();
         }
 
         public IConfiguration Configuration { get; }
@@ -35,9 +32,8 @@ namespace Cms
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
            
-            app.UseSerilogRequestLogging(); 
-           // app.UseMiddleware<TelemetryMiddleware>();
-           
+            app.UseSerilogRequestLogging();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
