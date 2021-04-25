@@ -1,20 +1,9 @@
-version: "3"
+version: '3'
 services:
-  seqcli:
-    image: datalust/seqcli:latest
-    command: apikey create -t newapikey --token 12345678901234567890 -s http://seq
-    depends_on:
-      - seq
-    restart: on-failure
-    networks:
-      - seqnetwork
   seq:
     image: datalust/seq:latest
-    environment:
-      - ACCEPT_EULA=Y
     ports:
-      - 5341:80
-    networks:
-      - seqnetwork
-networks:
-  seqnetwork:
+      - 80:80
+      - 5341:5341
+    environment:
+      ACCEPT_EULA: Y
