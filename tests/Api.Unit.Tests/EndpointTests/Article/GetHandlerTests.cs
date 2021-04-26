@@ -1,7 +1,9 @@
 using System.Threading.Tasks;
 using Cms.Endpoints.Article;
 using Cms.Endpoints.Article.Request;
+using Cms.Endpoints.Article.Response;
 using FizzWare.NBuilder;
+using Microsoft.AspNetCore.Mvc;
 using Shouldly;
 using Xunit;
 
@@ -19,8 +21,14 @@ namespace Api.Unit.Tests.EndpointTests.Article
         {
             var request = Builder<ArticleRequest>.CreateNew().Build();
 
-            var result = await _classUnderTest.HandleAsync(request, default);
-            result.ShouldNotBeNull();
+            var response = await _classUnderTest.HandleAsync(request, default);
+            response.ShouldNotBeNull();
+            response.Result.ShouldBeOfType<OkObjectResult>();
+
+            var result = response.Result as OkObjectResult;
+            result.Value.ShouldBeOfType<ArticleResponse>();
+            response.ShouldSatisfyAllConditions();
+
         }
     }
 }

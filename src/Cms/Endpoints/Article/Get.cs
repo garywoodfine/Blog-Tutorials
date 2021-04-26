@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
+using Cms.Aspects;
 using Cms.Attributes;
 using Cms.Endpoints.Article.Request;
 using Cms.Endpoints.Article.Response;
@@ -29,7 +30,6 @@ namespace Cms.Endpoints.Article
         ]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ArticleResponse))]
         [Produces("application/json")]
-        [Telemetry]
         public async override  Task<ActionResult<ArticleResponse>> HandleAsync([FromRoute] ArticleRequest request,
             CancellationToken cancellationToken = new CancellationToken())
         {
