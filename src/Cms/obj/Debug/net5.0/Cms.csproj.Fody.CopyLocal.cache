@@ -1,8 +1,8 @@
 /home/gary/.nuget/packages/ardalis.apiendpoints/3.0.0/lib/netstandard2.0/Ardalis.ApiEndpoints.dll
 /home/gary/.nuget/packages/automapper/10.1.1/lib/netstandard2.0/AutoMapper.dll
 /home/gary/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-/home/gary/.nuget/packages/boleyn.database.entities/1.0.7/lib/net5.0/Boleyn.Database.Entities.dll
-/home/gary/.nuget/packages/boleyn.database.postgre/1.0.9/lib/net5.0/Boleyn.Database.Postgre.dll
+/home/gary/.nuget/packages/boleyn.database.entities/1.0.9/lib/net5.0/Boleyn.Database.Entities.dll
+/home/gary/.nuget/packages/boleyn.database.postgre/1.0.13/lib/net5.0/Boleyn.Database.Postgre.dll
 /home/gary/.nuget/packages/dapr.aspnetcore/1.1.0/lib/netcoreapp3.1/Dapr.AspNetCore.dll
 /home/gary/.nuget/packages/dapr.client/1.1.0/lib/netcoreapp3.1/Dapr.Client.dll
 /home/gary/.nuget/packages/dawn.guard/1.12.0/lib/netstandard2.0/Dawn.Guard.dll

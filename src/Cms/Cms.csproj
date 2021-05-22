@@ -9,7 +9,7 @@
         <PackageReference Include="Ardalis.ApiEndpoints" Version="3.0.0" />
         <PackageReference Include="AutoMapper" Version="10.1.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-        <PackageReference Include="Boleyn.Database.Postgre" Version="1.0.9" />
+        <PackageReference Include="Boleyn.Database.Postgre" Version="1.0.13" />
         <PackageReference Include="Dapr.AspNetCore" Version="1.1.0" />
         <PackageReference Include="Dapr.Client" Version="1.1.0" />
         <PackageReference Include="Dawn.Guard" Version="1.12.0" />
