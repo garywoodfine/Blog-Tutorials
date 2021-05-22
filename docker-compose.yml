@@ -12,8 +12,8 @@ services:
     container_name: tutorials_postgre
     image: postgres
     environment:
-      POSTGRES_USER: tutorials
-      POSTGRES_PASSWORD: password12@
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres

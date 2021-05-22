@@ -1,10 +1,16 @@
+using Boleyn.Database.Postgre;
+using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Threenine.Data.DependencyInjection;
 
 namespace Cms
 {
@@ -26,6 +32,15 @@ namespace Cms
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "cms", Version = "v1"}); 
                 c.EnableAnnotations();
             });
+            
+            services.AddDbContext<BoleynContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("tutorials"))
+            ).AddUnitOfWork<BoleynContext>();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddMediatR(typeof(Startup));
+            services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +48,11 @@ namespace Cms
         {
            
             app.UseSerilogRequestLogging();
-
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<BoleynContext>();
+                context.Database.Migrate();
+            }
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
