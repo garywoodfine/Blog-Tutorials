@@ -6,6 +6,8 @@
 /home/gary/.nuget/packages/dapr.aspnetcore/1.1.0/lib/netcoreapp3.1/Dapr.AspNetCore.dll
 /home/gary/.nuget/packages/dapr.client/1.1.0/lib/netcoreapp3.1/Dapr.Client.dll
 /home/gary/.nuget/packages/dawn.guard/1.12.0/lib/netstandard2.0/Dawn.Guard.dll
+/home/gary/.nuget/packages/fluentvalidation/10.1.0/lib/net5.0/FluentValidation.dll
+/home/gary/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.1.0/lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll
 /home/gary/.nuget/packages/google.api.commonprotos/2.2.0/lib/netstandard2.0/Google.Api.CommonProtos.dll
 /home/gary/.nuget/packages/google.protobuf/3.13.0/lib/netstandard2.0/Google.Protobuf.dll
 /home/gary/.nuget/packages/grpc.core.api/2.32.0/lib/netstandard2.0/Grpc.Core.Api.dll
