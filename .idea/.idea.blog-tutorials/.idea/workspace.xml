@@ -4,12 +4,19 @@
     <projectFile>src/Cms/Cms.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53b6ceba-97ef-420f-9068-71a95090c879" name="Default Changelist" comment="Validation Pipeline behaviour implemented">
+    <list default="true" id="53b6ceba-97ef-420f-9068-71a95090c879" name="Default Changelist" comment="Validation Pipeline">
       <change afterPath="$PROJECT_DIR$/.env.Development" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/CreateSalutationCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cms/ValidationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/ValidationPipelineBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cms/LoggingBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.blog-tutorials/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.blog-tutorials/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cms/bin/Debug/net5.0/Cms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/bin/Debug/net5.0/Cms.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cms/bin/Debug/net5.0/Cms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/bin/Debug/net5.0/Cms.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/bin/Debug/net5.0/ref/Cms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/bin/Debug/net5.0/ref/Cms.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/Cms.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/ref/Cms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/obj/Debug/net5.0/ref/Cms.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +41,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3830CEC-7FFA-4936-846B-97AFAE6D5D4E/2F/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Get/GetSalutationQueryValidator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -67,9 +75,10 @@
       <option value="$PROJECT_DIR$/docker-compose.yml" />
       <option value="$PROJECT_DIR$/.env.Development" />
       <option value="$PROJECT_DIR$/src/Cms/ValidationBehaviour.cs" />
-      <option value="$PROJECT_DIR$/src/Cms/Startup.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Get/GetSalutationQueryValidator.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/CreateSalutationCommandValidator.cs" />
+      <option value="$PROJECT_DIR$/src/Cms/LoggingBehaviour.cs" />
+      <option value="$PROJECT_DIR$/src/Cms/Startup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sqVf5EPLlo0mmhJCPnPlPl0JZX" />
@@ -123,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1621600232711</updated>
       <workItem from="1621600265269" duration="15333000" />
-      <workItem from="1621707153366" duration="13459000" />
+      <workItem from="1621707153366" duration="15069000" />
     </task>
     <task id="LOCAL-00001" summary="Added some Endpoints">
       <created>1621707169798</created>
@@ -153,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621719114637</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Validation Pipeline">
+      <created>1621793795325</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621793795325</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +195,8 @@
     <MESSAGE value="Updated Gitingnore rule" />
     <MESSAGE value="A working Example" />
     <MESSAGE value="Validation Pipeline behaviour implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validation Pipeline behaviour implemented" />
+    <MESSAGE value="Validation Pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validation Pipeline" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
