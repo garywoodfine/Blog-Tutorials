@@ -1,0 +1,39 @@
+Index: src/Cms/Endpoints/Salutations/Post/CreateSalutationCommandValidator.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Cms/Endpoints/Salutations/Post/CreateSalutationCommandValidator.cs b/src/Cms/Endpoints/Salutations/Post/CreateSalutationCommandValidator.cs
+new file mode 100644
+--- /dev/null	(date 1621793648532)
++++ b/src/Cms/Endpoints/Salutations/Post/CreateSalutationCommandValidator.cs	(date 1621793648532)
+@@ -0,0 +1,15 @@
++using System.Data;
++using FluentValidation;
++
++namespace Cms.Endpoints.Salutations.Post
++{
++    public class CreateSalutationCommandValidator : AbstractValidator<CreateSalutationCommand>
++    {
++        public CreateSalutationCommandValidator()
++        {
++            RuleFor(x => x.Abbreviation).NotEmpty();
++            RuleFor(x => x.Description).NotEmpty();
++            RuleFor(x => x.FullWord).NotEmpty();
++        }
++    }
++}
+\ No newline at end of file
+Index: .env.Development
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.env.Development b/.env.Development
+new file mode 100644
+--- /dev/null	(date 1621793648368)
++++ b/.env.Development	(date 1621793648368)
+@@ -0,0 +1,2 @@
++DATABASE_USERNAME=tutorials
++DATABASE_PASSWORD=password12@
+\ No newline at end of file
