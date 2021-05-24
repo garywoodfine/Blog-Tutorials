@@ -1,3 +1,4 @@
+using AutoMapper;
 using MediatR;
 
 namespace Cms.Endpoints.Salutations.Post
@@ -7,5 +8,7 @@ namespace Cms.Endpoints.Salutations.Post
         public string Abbreviation { get; set; }
         public string FullWord  { get; set; }
         public string Description { get; set; }
+        
+        public int GenderId { get; set; }
     }
 }
