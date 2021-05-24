@@ -13,7 +13,6 @@ namespace Cms.Endpoints.Salutations.Post
                 .ForMember(x => x.Description, opt => opt.MapFrom(src => src.Description))
                 .ForMember(x => x.FullWord, opt => opt.MapFrom(src => src.FullWord))
                 .ForMember(x => x.GenderId, opt => opt.MapFrom(src => src.GenderId));
-            
         }
     }
 }
