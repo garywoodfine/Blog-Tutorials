@@ -4,9 +4,10 @@
     <projectFile>src/Cms/Cms.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53b6ceba-97ef-420f-9068-71a95090c879" name="Default Changelist" comment="Refactored to individual mapping profiles to suit Vertical Slice pattern of implementing Endpoints">
+    <list default="true" id="53b6ceba-97ef-420f-9068-71a95090c879" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.blog-tutorials/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.blog-tutorials/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/PostSalutationMappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/PostSalutationMappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Get/Get.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Get/Get.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/Get.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/Get.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +54,10 @@
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Get/GetSalutationHandler.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/CreateSalutationHandler.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/GetAllResponse.cs" />
-      <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Get/Get.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/Post.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/GetAllSalutationBody.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/GetAllSalutationQuery.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/GetAllSalutationHandler.cs" />
-      <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/Get.cs" />
       <option value="$PROJECT_DIR$/.gitignore" />
       <option value="$PROJECT_DIR$/docker-compose.yml" />
       <option value="$PROJECT_DIR$/src/Cms/ValidationBehaviour.cs" />
@@ -74,6 +73,8 @@
       <option value="$PROJECT_DIR$/.env.Development" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/CreateSalutationCommand.cs" />
       <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Post/PostSalutationMappingProfile.cs" />
+      <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/Get/Get.cs" />
+      <option value="$PROJECT_DIR$/src/Cms/Endpoints/Salutations/GetAll/Get.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sqVf5EPLlo0mmhJCPnPlPl0JZX" />
@@ -128,7 +129,11 @@
       <updated>1621600232711</updated>
       <workItem from="1621600265269" duration="15333000" />
       <workItem from="1621707153366" duration="15069000" />
-      <workItem from="1621839000604" duration="2408000" />
+      <workItem from="1621839000604" duration="2470000" />
+      <workItem from="1621895322037" duration="837000" />
+      <workItem from="1621964757933" duration="210000" />
+      <workItem from="1621966676180" duration="315000" />
+      <workItem from="1622013468291" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="Added some Endpoints">
       <created>1621707169798</created>
@@ -172,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621840160133</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update to mapping profile">
+      <created>1621869852232</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621869852232</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +212,8 @@
     <MESSAGE value="Validation Pipeline behaviour implemented" />
     <MESSAGE value="Validation Pipeline" />
     <MESSAGE value="Refactored to individual mapping profiles to suit Vertical Slice pattern of implementing Endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored to individual mapping profiles to suit Vertical Slice pattern of implementing Endpoints" />
+    <MESSAGE value="Update to mapping profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to mapping profile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -28,10 +28,13 @@ namespace Cms.Endpoints.Salutations.Get
             Tags = new[] {EndPointRouteNames.Salutations})
         ]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetSalutationResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesErrorResponseType(typeof(NotFoundResult))]
         [Produces("application/json")]
         public override async Task<ActionResult<GetSalutationResponse>> HandleAsync([FromRoute] GetSalutationQuery request, CancellationToken cancellationToken = new CancellationToken())
         {
             var response = await _mediator.Send(request, cancellationToken);
+            if (response == null) return new NotFoundResult();
             return new OkObjectResult(response);
         }
     }
