@@ -29,11 +29,14 @@ namespace Cms.Endpoints.Article.Get
             Tags = new[] {"Article"})
         ]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetArticleResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesErrorResponseType(typeof(NotFoundResult))]
         [Produces("application/json")]
         public override async  Task<ActionResult<GetArticleResponse>> HandleAsync([FromRoute] GetArticleQuery query,
             CancellationToken cancellationToken = new CancellationToken())
         {
             var article = await _mediator.Send(query, cancellationToken);
+            if (article == null) return new NotFoundResult();
             return new OkObjectResult(article);
         }
     }
