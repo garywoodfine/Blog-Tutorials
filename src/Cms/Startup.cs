@@ -1,4 +1,5 @@
 using Boleyn.Database.Postgre;
+using Cms.Behaviours;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
