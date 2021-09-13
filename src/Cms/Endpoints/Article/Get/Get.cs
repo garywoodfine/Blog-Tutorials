@@ -11,8 +11,8 @@ namespace Cms.Endpoints.Article.Get
 {
     [Route(EndPointRouteNames.Article)]
     public class Get : BaseAsyncEndpoint
-        .WithRequest<GetArticleQuery>
-        .WithResponse<GetArticleResponse>
+        .WithRequest<Query>
+        .WithResponse<Response>
     {
         private readonly IMediator _mediator;
 
@@ -28,11 +28,11 @@ namespace Cms.Endpoints.Article.Get
             OperationId = "EF0A3653-153F-4E73-8D20-621C9F9FFDC9",
             Tags = new[] {"Article"})
         ]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetArticleResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesErrorResponseType(typeof(NotFoundResult))]
         [Produces("application/json")]
-        public override async  Task<ActionResult<GetArticleResponse>> HandleAsync([FromRoute] GetArticleQuery query,
+        public override async  Task<ActionResult<Response>> HandleAsync([FromRoute] Query query,
             CancellationToken cancellationToken = new CancellationToken())
         {
             var article = await _mediator.Send(query, cancellationToken);

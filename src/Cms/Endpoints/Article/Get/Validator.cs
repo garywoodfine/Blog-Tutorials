@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Cms.Endpoints.Article.Get
 {
-    public class GetArticleQueryValidator : AbstractValidator<GetArticleQuery>
+    public class Validator : AbstractValidator<Query>
     {
-        public GetArticleQueryValidator()
+        public Validator()
         {
             RuleFor(x => x.Id).NotEmpty();
         }

@@ -2,7 +2,7 @@ using System;
 
 namespace Cms.Endpoints.Article.Get
 {
-    public class GetArticleResponse
+    public class Response
     {
         public string Title { get; set; }
         public string Description { get; set; }

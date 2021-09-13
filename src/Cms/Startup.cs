@@ -32,6 +32,7 @@ namespace Cms
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "cms", Version = "v1"}); 
                 c.EnableAnnotations();
+                c.CustomSchemaIds(x => x.FullName);
             });
             
             services.AddDbContext<BoleynContext>(options =>

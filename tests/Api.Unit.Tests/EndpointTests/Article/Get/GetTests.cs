@@ -8,24 +8,24 @@ using Moq;
 using Shouldly;
 using Xunit;
 
-namespace Api.Unit.Tests.EndpointTests.Article
+namespace Api.Unit.Tests.EndpointTests.Article.Get
 {
-    public class GetEndpointTests
+    public class GetTests
     {
-        private readonly Get _classUnderTest;
+        private readonly Cms.Endpoints.Article.Get.Get _classUnderTest;
         private Mock<IMediator> _mediator;
-        public GetEndpointTests()
+        public GetTests()
         {
             _mediator = new Mock<IMediator>();
-            _classUnderTest = new Get(_mediator.Object);
+            _classUnderTest = new Cms.Endpoints.Article.Get.Get(_mediator.Object);
         }
         [Fact]
         public async Task Should_return_ok_object_result_with_article_response()
         {
             // Arrange
-            var request = Builder<GetArticleQuery>.CreateNew().Build();
-            var response = Builder<GetArticleResponse>.CreateNew().Build();
-            _mediator.Setup(x => x.Send(It.IsAny<GetArticleQuery>(), default)).ReturnsAsync(response);
+            var request = Builder<Query>.CreateNew().Build();
+            var response = Builder<Response>.CreateNew().Build();
+            _mediator.Setup(x => x.Send(It.IsAny<Query>(), default)).ReturnsAsync(response);
             // Act 
             var result = await _classUnderTest.HandleAsync(request, default);
             
@@ -35,15 +35,15 @@ namespace Api.Unit.Tests.EndpointTests.Article
             result.ShouldSatisfyAllConditions();
 
             var okResult = result.Result as OkObjectResult;
-            okResult.Value.ShouldBeOfType<GetArticleResponse>();
+            okResult.Value.ShouldBeOfType<Response>();
             okResult.ShouldSatisfyAllConditions();
         }
         [Fact]
         public async Task Should_return_404_response()
         {
             // Arrange
-            var request = Builder<GetArticleQuery>.CreateNew().Build();
-           _mediator.Setup(x => x.Send(It.IsAny<GetArticleQuery>(), default)).ReturnsAsync((Func<GetArticleResponse>) null);
+            var request = Builder<Query>.CreateNew().Build();
+           _mediator.Setup(x => x.Send(It.IsAny<Query>(), default)).ReturnsAsync((Func<Response>) null);
             // Act 
             var result = await _classUnderTest.HandleAsync(request, default);
             
