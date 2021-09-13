@@ -9,7 +9,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace Cms.Endpoints.Article.Get
 {
-    [Route(EndPointRouteNames.Article)]
+    [Route(Routes.Article)]
     public class Get : BaseAsyncEndpoint
         .WithRequest<Query>
         .WithResponse<Response>
@@ -33,7 +33,7 @@ namespace Cms.Endpoints.Article.Get
         [ProducesErrorResponseType(typeof(NotFoundResult))]
         [Produces("application/json")]
         public override async  Task<ActionResult<Response>> HandleAsync([FromRoute] Query query,
-            CancellationToken cancellationToken = new CancellationToken())
+            CancellationToken cancellationToken = new())
         {
             var article = await _mediator.Send(query, cancellationToken);
             if (article == null) return new NotFoundResult();

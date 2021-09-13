@@ -3,5 +3,6 @@
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::0E7C4D8F-F48E-41D5-843E-694517B89B3D::net5.0::Api.Unit.Tests.EndpointTests.Article.Get.MappingTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::0E7C4D8F-F48E-41D5-843E-694517B89B3D::net5.0::Api.Unit.Tests.EndpointTests.Article.Get.ValidatorTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::0E7C4D8F-F48E-41D5-843E-694517B89B3D::net5.0::Api.Unit.Tests.EndpointTests.Article.Get.GetTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
