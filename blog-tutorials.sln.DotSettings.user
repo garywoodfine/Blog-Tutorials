@@ -8,5 +8,7 @@
     &lt;TestId&gt;xUnit::0BD74C1E-FE5A-47B4-A356-9484DBAC2D8A::net5.0::Countries.Unit.Tests.CountryProviderTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::09E8BD3E-610E-48C2-87FD-1D91BE860D24::net5.0::WorldBank.Models.Tests.CountrySerializationTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::0BD74C1E-FE5A-47B4-A356-9484DBAC2D8A::net5.0::Countries.Unit.Tests.GetTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::0BD74C1E-FE5A-47B4-A356-9484DBAC2D8A::net5.0::Countries.Unit.Tests.MappingTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::0BD74C1E-FE5A-47B4-A356-9484DBAC2D8A::net5.0::Countries.Unit.Tests.ValidatorTests.Should_have_validation_error_for_empty_iso_code&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
