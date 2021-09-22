@@ -4,5 +4,9 @@
     &lt;TestId&gt;xUnit::0E7C4D8F-F48E-41D5-843E-694517B89B3D::net5.0::Api.Unit.Tests.EndpointTests.Article.Get.MappingTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::0E7C4D8F-F48E-41D5-843E-694517B89B3D::net5.0::Api.Unit.Tests.EndpointTests.Article.Get.ValidatorTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::0E7C4D8F-F48E-41D5-843E-694517B89B3D::net5.0::Api.Unit.Tests.EndpointTests.Article.Get.GetTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::09E8BD3E-610E-48C2-87FD-1D91BE860D24::net5.0::WorldBank.Models.Tests.CountrySerializationTests.Should_Serialise_World_Bank_Response&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::0BD74C1E-FE5A-47B4-A356-9484DBAC2D8A::net5.0::Countries.Unit.Tests.CountryProviderTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::09E8BD3E-610E-48C2-87FD-1D91BE860D24::net5.0::WorldBank.Models.Tests.CountrySerializationTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::0BD74C1E-FE5A-47B4-A356-9484DBAC2D8A::net5.0::Countries.Unit.Tests.GetTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

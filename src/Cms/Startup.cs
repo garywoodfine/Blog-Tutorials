@@ -51,11 +51,7 @@ namespace Cms
         {
            
             app.UseSerilogRequestLogging();
-            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetService<BoleynContext>();
-                context.Database.Migrate();
-            }
+          
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
