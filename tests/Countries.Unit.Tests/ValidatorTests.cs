@@ -20,7 +20,7 @@ namespace Countries.Unit.Tests
         [InlineData("123")]
         public void Should_have_validation_error_for_empty_iso_code(string input)
         {
-            var query = new Query();
+            var query = new Query{ CountryCode = input };
             var result = _validator.TestValidate(query);
             result.ShouldHaveValidationErrorFor(x => x.CountryCode);
         }
