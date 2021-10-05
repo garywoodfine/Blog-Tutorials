@@ -42,7 +42,7 @@ namespace Boleyn.Countries.Activities.Country.Get
                 if (result == null) return new NotFoundResult();
                 return new OkObjectResult(result);
             }
-            catch (CountryCodeException e)
+            catch( CountryValidationException e)
             {
                 return new BadRequestObjectResult(e.Message);
             }

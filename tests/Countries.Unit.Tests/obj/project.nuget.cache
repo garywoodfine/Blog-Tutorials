@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7tp+PIl7IwUhUdcaGbQrWArLGCFo3MFRx4yrCNV9cFWzvrmsBB1aAlbFnFP0Fne4Hcn9i57ir9ZCfdzqTi/ptg==",
+  "dgSpecHash": "HMRqs5WiVlGE7t0vNXheqwApjnrd0IFwWCroHFRuhZ3ZSbGJsEfApz2m/qq4xPvy2b7J9p62rfbwZjAKdGg4oA==",
   "success": true,
   "projectFilePath": "/home/gary/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj",
   "expectedPackageFiles": [
@@ -95,6 +95,7 @@
     "/home/gary/.nuget/packages/runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/home/gary/.nuget/packages/serilog/2.10.0/serilog.2.10.0.nupkg.sha512",
     "/home/gary/.nuget/packages/serilog.aspnetcore/4.1.0/serilog.aspnetcore.4.1.0.nupkg.sha512",
+    "/home/gary/.nuget/packages/serilog.exceptions/6.1.0/serilog.exceptions.6.1.0.nupkg.sha512",
     "/home/gary/.nuget/packages/serilog.extensions.hosting/4.1.2/serilog.extensions.hosting.4.1.2.nupkg.sha512",
     "/home/gary/.nuget/packages/serilog.extensions.logging/3.0.1/serilog.extensions.logging.3.0.1.nupkg.sha512",
     "/home/gary/.nuget/packages/serilog.formatting.compact/1.1.0/serilog.formatting.compact.1.1.0.nupkg.sha512",
@@ -102,6 +103,8 @@
     "/home/gary/.nuget/packages/serilog.sinks.console/3.1.1/serilog.sinks.console.3.1.1.nupkg.sha512",
     "/home/gary/.nuget/packages/serilog.sinks.debug/2.0.0/serilog.sinks.debug.2.0.0.nupkg.sha512",
     "/home/gary/.nuget/packages/serilog.sinks.file/4.1.0/serilog.sinks.file.4.1.0.nupkg.sha512",
+    "/home/gary/.nuget/packages/serilog.sinks.periodicbatching/2.3.0/serilog.sinks.periodicbatching.2.3.0.nupkg.sha512",
+    "/home/gary/.nuget/packages/serilog.sinks.seq/5.0.1/serilog.sinks.seq.5.0.1.nupkg.sha512",
     "/home/gary/.nuget/packages/shouldly/4.0.3/shouldly.4.0.3.nupkg.sha512",
     "/home/gary/.nuget/packages/swashbuckle.aspnetcore/6.2.1/swashbuckle.aspnetcore.6.2.1.nupkg.sha512",
     "/home/gary/.nuget/packages/swashbuckle.aspnetcore.annotations/6.2.1/swashbuckle.aspnetcore.annotations.6.2.1.nupkg.sha512",
@@ -168,7 +171,7 @@
     "/home/gary/.nuget/packages/system.reflection.emit.lightweight/4.7.0/system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "/home/gary/.nuget/packages/system.reflection.extensions/4.3.0/system.reflection.extensions.4.3.0.nupkg.sha512",
     "/home/gary/.nuget/packages/system.reflection.primitives/4.3.0/system.reflection.primitives.4.3.0.nupkg.sha512",
-    "/home/gary/.nuget/packages/system.reflection.typeextensions/4.3.0/system.reflection.typeextensions.4.3.0.nupkg.sha512",
+    "/home/gary/.nuget/packages/system.reflection.typeextensions/4.7.0/system.reflection.typeextensions.4.7.0.nupkg.sha512",
     "/home/gary/.nuget/packages/system.resources.resourcemanager/4.3.0/system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "/home/gary/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
     "/home/gary/.nuget/packages/system.runtime.caching/5.0.0/system.runtime.caching.5.0.0.nupkg.sha512",

@@ -8,7 +8,7 @@ using Serilog;
 
 namespace Boleyn.Countries.Behaviours
 {
-    public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> 
     {
         private readonly ILogger _logger;
 

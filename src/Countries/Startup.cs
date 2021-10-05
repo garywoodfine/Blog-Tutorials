@@ -32,11 +32,18 @@ namespace Boleyn.Countries.Content
                 c.CustomSchemaIds(x => x.FullName);
                 c.EnableAnnotations();
             });
-            services.AddMediatR(typeof(Startup));
+            
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
+            services.AddMediatR(typeof(Startup))
+                .AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
+                .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>))
+                .AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandlerBehavior<,>));
+          
+            /*services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandlerBehavior<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandlerBehavior<,>));*/
+           
+           
             services.AddAutoMapper(typeof(Startup));
             services.AddHttpClient<IProvider<WorldBank.Models.Country>, CountryProvider>(client =>
             {
