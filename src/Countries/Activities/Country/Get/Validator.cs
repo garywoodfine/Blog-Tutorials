@@ -1,5 +1,4 @@
 using FluentValidation;
-
 namespace Boleyn.Countries.Activities.Sample.Get
 {
     public class Validator : AbstractValidator<Query>

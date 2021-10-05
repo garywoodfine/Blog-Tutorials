@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using WorldBank.Models;
 
 namespace Boleyn.Countries.Content
 {
@@ -32,20 +33,15 @@ namespace Boleyn.Countries.Content
                 c.CustomSchemaIds(x => x.FullName);
                 c.EnableAnnotations();
             });
-            
+
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
             services.AddMediatR(typeof(Startup))
                 .AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
                 .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>))
                 .AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandlerBehavior<,>));
-          
-            /*services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandlerBehavior<,>));*/
-           
-           
+
             services.AddAutoMapper(typeof(Startup));
-            services.AddHttpClient<IProvider<WorldBank.Models.Country>, CountryProvider>(client =>
+            services.AddHttpClient<IProvider<Country>, CountryProvider>(client =>
             {
                 client.BaseAddress = new Uri("http://api.worldbank.org/v2/country/");
                 client.DefaultRequestHeaders.Add("accept", "application/json");

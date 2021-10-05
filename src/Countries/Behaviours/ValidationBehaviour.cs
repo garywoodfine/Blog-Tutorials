@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,18 +27,17 @@ namespace Boleyn.Countries.Behaviours
         {
             if (!_validators.Any()) return await next();
 
-
             var context = new ValidationContext<TRequest>(request);
             var validationResults =
                 await Task.WhenAll(_validators.Select(v => v.ValidateAsync(context, cancellationToken)));
             var failures = validationResults.SelectMany(r => r.Errors).Where(f => f != null).ToList();
-            _logger.Information(failures.ToString());
+          
             if (!failures.Any()) return await next();
 
             var sb = new StringBuilder();
             failures.ForEach(f =>
             {
-                _logger.Information($"Validation error {f} ");
+                _logger.Information($"Validation Error: {f.PropertyName} {f.Severity} {f.AttemptedValue}   ");
                 sb.Append(f.ErrorMessage);
             });
             throw new CountryValidationException(sb.ToString());
