@@ -37,7 +37,7 @@ namespace Boleyn.Countries.Behaviours
             var sb = new StringBuilder();
             failures.ForEach(f =>
             {
-                _logger.Information($"Validation Error: {f.PropertyName} {f.Severity} {f.AttemptedValue}   ");
+                _logger.Information($"Validation Error: Property -{f.PropertyName}  Severity -{f.Severity} Value- {f.AttemptedValue}   ");
                 sb.Append(f.ErrorMessage);
             });
             throw new CountryValidationException(sb.ToString());
