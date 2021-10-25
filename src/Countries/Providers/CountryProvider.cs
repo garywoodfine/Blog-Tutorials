@@ -23,7 +23,7 @@ namespace Boleyn.Countries.Content.Providers
             var responseJson = await response.Content.ReadAsStringAsync();
             if (string.IsNullOrEmpty(responseJson)) return null;
 
-            if (responseJson.Contains("message")) throw new CountryNotFoundException($"No Country found for code {predicate}");
+            if (responseJson.Contains("message")) throw new NotFoundException($"No Country found for code {predicate}");
             var obj = JsonConvert.DeserializeObject<JArray>(responseJson);
             return  JsonConvert.DeserializeObject<Country>(obj[1][0].ToString());;
 

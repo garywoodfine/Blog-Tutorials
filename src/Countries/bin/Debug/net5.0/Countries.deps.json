@@ -49,6 +49,7 @@
           "Serilog.Sinks.Seq": "5.0.1",
           "Swashbuckle.AspNetCore": "6.2.1",
           "Swashbuckle.AspNetCore.Annotations": "6.2.1",
+          "Threenine.ApiResponse": "0.1.30",
           "WorldBank.Models": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "5.0.0.0",
@@ -1320,6 +1321,17 @@
           "System.Text.Encoding": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.0.11"
+        }
+      },
+      "Threenine.ApiResponse/0.1.30": {
+        "runtime": {
+          "lib/net5.0/Threenine.ApiResponse.dll": {
+            "assemblyVersion": "0.1.30.0",
+            "fileVersion": "0.1.30.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Threenine.ApiResponse.dll": {}
         }
       },
       "WorldBank.Models/1.0.0": {
@@ -3780,6 +3792,13 @@
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
+    },
+    "Threenine.ApiResponse/0.1.30": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mkWhIB0RZbIT1cW9dc3ElXXGzqirhK8zk6gSkm05i7gGnMn5zbR2wYj7c4yHVdq2JIlX0NN2spb02yhzdXbvg==",
+      "path": "threenine.apiresponse/0.1.30",
+      "hashPath": "threenine.apiresponse.0.1.30.nupkg.sha512"
     },
     "WorldBank.Models/1.0.0": {
       "type": "project",

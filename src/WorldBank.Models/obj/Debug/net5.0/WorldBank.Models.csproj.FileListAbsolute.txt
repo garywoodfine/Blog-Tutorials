@@ -10,3 +10,15 @@
 /home/gary/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.dll
 /home/gary/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/ref/WorldBank.Models.dll
 /home/gary/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.pdb
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/bin/Debug/net5.0/WorldBank.Models.deps.json
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/bin/Debug/net5.0/WorldBank.Models.dll
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/bin/Debug/net5.0/ref/WorldBank.Models.dll
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/bin/Debug/net5.0/WorldBank.Models.pdb
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.csprojAssemblyReference.cache
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.GeneratedMSBuildEditorConfig.editorconfig
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.AssemblyInfoInputs.cache
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.AssemblyInfo.cs
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.csproj.CoreCompileInputs.cache
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.dll
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/ref/WorldBank.Models.dll
+/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/Debug/net5.0/WorldBank.Models.pdb

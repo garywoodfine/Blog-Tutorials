@@ -1,14 +1,13 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Boleyn.Countries.Content.Providers;
 using MediatR;
-using WorldBank.Models;
+using Threenine.ApiResponse;
 
-namespace Boleyn.Countries.Activities.Sample.Get
+namespace Boleyn.Countries.Activities.Country.Get
 {
-    public class Handler : IRequestHandler<Query, Response>
+    public class Handler : IRequestHandler<Query, SingleResponse<Response>>
     {
         private readonly IProvider<WorldBank.Models.Country> _provider;
         private readonly IMapper _mapper;
@@ -19,17 +18,10 @@ namespace Boleyn.Countries.Activities.Sample.Get
             _mapper = mapper;
         }
 
-        public async Task<Response> Handle(Query query, CancellationToken cancellationToken)
+        public async Task<SingleResponse<Response>> Handle(Query query, CancellationToken cancellationToken)
         {
-            try
-            {
-                var country = await _provider.Get(query.CountryCode);
-                return country != null ? _mapper.Map<Response>(country) : null;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
+                var country = await _provider.Get(query.IsoCode);
+                return new SingleResponse<Response>(_mapper.Map<Response>(country));
         }
     }
 }

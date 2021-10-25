@@ -1,7 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
-using Boleyn.Countries.Activities.Sample.Get;
 using Boleyn.Countries.Content.Activities;
 using Boleyn.Countries.Content.Exceptions;
 using MediatR;
@@ -36,16 +35,8 @@ namespace Boleyn.Countries.Activities.Country.Get
         public override async Task<ActionResult<Response>> HandleAsync([FromRoute] Query query,
             CancellationToken cancellationToken = new())
         {
-            try
-            {
-                var result = await _mediator.Send(query, cancellationToken);
-                if (result == null) return new NotFoundResult();
-                return new OkObjectResult(result);
-            }
-            catch( CountryValidationException e)
-            {
-                return new BadRequestObjectResult(e.Message);
-            }
+            var result = await _mediator.Send(query, cancellationToken);
+            return new OkObjectResult(result.Item);
         }
     }
 }

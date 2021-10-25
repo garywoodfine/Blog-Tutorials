@@ -1,9 +1,11 @@
 using System;
 using Boleyn.Countries.Behaviours;
+using Boleyn.Countries.Content.Middleware;
 using Boleyn.Countries.Content.Providers;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,12 +35,12 @@ namespace Boleyn.Countries.Content
                 c.CustomSchemaIds(x => x.FullName);
                 c.EnableAnnotations();
             });
-
+            services.AddTransient<ExceptionHandlingMiddleware>();
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
             services.AddMediatR(typeof(Startup))
-                .AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
-                .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>))
-                .AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionsHandlerBehavior<,>));
+                .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
+                .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+          
 
             services.AddAutoMapper(typeof(Startup));
             services.AddHttpClient<IProvider<Country>, CountryProvider>(client =>
@@ -59,6 +61,7 @@ namespace Boleyn.Countries.Content
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Countries v1"));
             }
 
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -1,5 +1,5 @@
 using AutoMapper;
-using Boleyn.Countries.Activities.Sample.Get;
+using Boleyn.Countries.Activities.Country.Get;
 using FizzWare.NBuilder;
 using Shouldly;
 using WorldBank.Models;

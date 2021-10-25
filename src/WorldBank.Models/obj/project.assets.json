@@ -2679,19 +2679,23 @@
     ]
   },
   "packageFolders": {
-    "/home/gary/.nuget/packages/": {}
+    "/home/garyw/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
+      "projectUniqueName": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
       "projectName": "WorldBank.Models",
-      "projectPath": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
-      "packagesPath": "/home/gary/.nuget/packages/",
-      "outputPath": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/obj/",
+      "projectPath": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
+      "packagesPath": "/home/garyw/.nuget/packages/",
+      "outputPath": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/gary/.nuget/NuGet/NuGet.Config"
+        "/home/garyw/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

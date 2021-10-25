@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/home/gary/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj": {}
+    "/home/garyw/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj": {}
   },
   "projects": {
-    "/home/gary/code/Blog-Tutorials/src/Countries/Countries.csproj": {
+    "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gary/code/Blog-Tutorials/src/Countries/Countries.csproj",
+        "projectUniqueName": "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj",
         "projectName": "Threenine.Countries",
-        "projectPath": "/home/gary/code/Blog-Tutorials/src/Countries/Countries.csproj",
-        "packagesPath": "/home/gary/.nuget/packages/",
-        "outputPath": "/home/gary/code/Blog-Tutorials/src/Countries/obj/",
+        "projectPath": "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj",
+        "packagesPath": "/home/garyw/.nuget/packages/",
+        "outputPath": "/home/garyw/code/Blog-Tutorials/src/Countries/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/gary/.nuget/NuGet/NuGet.Config"
+          "/home/garyw/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -26,8 +29,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj": {
-                "projectPath": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj"
+              "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj": {
+                "projectPath": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj"
               }
             }
           }
@@ -109,6 +112,10 @@
             "Swashbuckle.AspNetCore.Annotations": {
               "target": "Package",
               "version": "[6.2.1, )"
+            },
+            "Threenine.ApiResponse": {
+              "target": "Package",
+              "version": "[0.1.30, )"
             }
           },
           "imports": [
@@ -133,17 +140,20 @@
         }
       }
     },
-    "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj": {
+    "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
+        "projectUniqueName": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
         "projectName": "WorldBank.Models",
-        "projectPath": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
-        "packagesPath": "/home/gary/.nuget/packages/",
-        "outputPath": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/obj/",
+        "projectPath": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj",
+        "packagesPath": "/home/garyw/.nuget/packages/",
+        "outputPath": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/gary/.nuget/NuGet/NuGet.Config"
+          "/home/garyw/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -191,17 +201,20 @@
         }
       }
     },
-    "/home/gary/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj": {
+    "/home/garyw/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gary/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj",
+        "projectUniqueName": "/home/garyw/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj",
         "projectName": "Countries.Unit.Tests",
-        "projectPath": "/home/gary/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj",
-        "packagesPath": "/home/gary/.nuget/packages/",
-        "outputPath": "/home/gary/code/Blog-Tutorials/tests/Countries.Unit.Tests/obj/",
+        "projectPath": "/home/garyw/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj",
+        "packagesPath": "/home/garyw/.nuget/packages/",
+        "outputPath": "/home/garyw/code/Blog-Tutorials/tests/Countries.Unit.Tests/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/gary/.nuget/NuGet/NuGet.Config"
+          "/home/garyw/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -213,8 +226,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/gary/code/Blog-Tutorials/src/Countries/Countries.csproj": {
-                "projectPath": "/home/gary/code/Blog-Tutorials/src/Countries/Countries.csproj"
+              "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj": {
+                "projectPath": "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj"
               }
             }
           }

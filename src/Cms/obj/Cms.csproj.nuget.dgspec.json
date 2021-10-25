@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/home/gary/code/Blog-Tutorials/src/Cms/Cms.csproj": {}
+    "/home/garyw/code/Blog-Tutorials/src/Cms/Cms.csproj": {}
   },
   "projects": {
-    "/home/gary/code/Blog-Tutorials/src/Cms/Cms.csproj": {
+    "/home/garyw/code/Blog-Tutorials/src/Cms/Cms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gary/code/Blog-Tutorials/src/Cms/Cms.csproj",
+        "projectUniqueName": "/home/garyw/code/Blog-Tutorials/src/Cms/Cms.csproj",
         "projectName": "Cms",
-        "projectPath": "/home/gary/code/Blog-Tutorials/src/Cms/Cms.csproj",
-        "packagesPath": "/home/gary/.nuget/packages/",
-        "outputPath": "/home/gary/code/Blog-Tutorials/src/Cms/obj/",
+        "projectPath": "/home/garyw/code/Blog-Tutorials/src/Cms/Cms.csproj",
+        "packagesPath": "/home/garyw/.nuget/packages/",
+        "outputPath": "/home/garyw/code/Blog-Tutorials/src/Cms/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/gary/.nuget/NuGet/NuGet.Config"
+          "/home/garyw/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

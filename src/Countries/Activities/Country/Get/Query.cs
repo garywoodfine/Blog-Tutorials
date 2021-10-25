@@ -1,10 +1,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Threenine.ApiResponse;
 
-namespace Boleyn.Countries.Activities.Sample.Get
+namespace Boleyn.Countries.Activities.Country.Get
 {
-    public class Query : IRequest<Response>
+    public class Query : IRequest<SingleResponse<Response>>
     {
-        [FromRoute(Name = "isoCode")] public string CountryCode { get; set; }
+        [FromRoute(Name = "isoCode")] public string IsoCode { get; set; }
     }
 }

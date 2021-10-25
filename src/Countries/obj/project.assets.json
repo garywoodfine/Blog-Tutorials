@@ -1439,6 +1439,15 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "Threenine.ApiResponse/0.1.30": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Threenine.ApiResponse.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Threenine.ApiResponse.dll": {}
+        }
+      },
       "WorldBank.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5082,6 +5091,18 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "Threenine.ApiResponse/0.1.30": {
+      "sha512": "6mkWhIB0RZbIT1cW9dc3ElXXGzqirhK8zk6gSkm05i7gGnMn5zbR2wYj7c4yHVdq2JIlX0NN2spb02yhzdXbvg==",
+      "type": "package",
+      "path": "threenine.apiresponse/0.1.30",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Threenine.ApiResponse.dll",
+        "threenine.apiresponse.0.1.30.nupkg.sha512",
+        "threenine.apiresponse.nuspec"
+      ]
+    },
     "WorldBank.Models/1.0.0": {
       "type": "project",
       "path": "../WorldBank.Models/WorldBank.Models.csproj",
@@ -5106,23 +5127,28 @@
       "Serilog.Sinks.Seq >= 5.0.1",
       "Swashbuckle.AspNetCore >= 6.2.1",
       "Swashbuckle.AspNetCore.Annotations >= 6.2.1",
+      "Threenine.ApiResponse >= 0.1.30",
       "WorldBank.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "/home/gary/.nuget/packages/": {}
+    "/home/garyw/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gary/code/Blog-Tutorials/src/Countries/Countries.csproj",
+      "projectUniqueName": "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj",
       "projectName": "Threenine.Countries",
-      "projectPath": "/home/gary/code/Blog-Tutorials/src/Countries/Countries.csproj",
-      "packagesPath": "/home/gary/.nuget/packages/",
-      "outputPath": "/home/gary/code/Blog-Tutorials/src/Countries/obj/",
+      "projectPath": "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj",
+      "packagesPath": "/home/garyw/.nuget/packages/",
+      "outputPath": "/home/garyw/code/Blog-Tutorials/src/Countries/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/gary/.nuget/NuGet/NuGet.Config"
+        "/home/garyw/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5134,8 +5160,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj": {
-              "projectPath": "/home/gary/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj"
+            "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj": {
+              "projectPath": "/home/garyw/code/Blog-Tutorials/src/WorldBank.Models/WorldBank.Models.csproj"
             }
           }
         }
@@ -5213,6 +5239,10 @@
           "Swashbuckle.AspNetCore.Annotations": {
             "target": "Package",
             "version": "[6.2.1, )"
+          },
+          "Threenine.ApiResponse": {
+            "target": "Package",
+            "version": "[0.1.30, )"
           }
         },
         "imports": [

@@ -58,7 +58,7 @@ namespace Countries.Unit.Tests
                 )
                 .Returns(Task.FromResult(InValidCountryResponse));
 
-            Should.ThrowAsync<CountryCodeException>(() => _classUnderTest.Get("zxz"));
+            Should.ThrowAsync<NotFoundException>(() => _classUnderTest.Get("zxz"));
           
         }
         

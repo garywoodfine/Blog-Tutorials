@@ -1,13 +1,13 @@
 using System;
 using System.Threading.Tasks;
 using Boleyn.Countries.Activities.Country.Get;
-using Boleyn.Countries.Activities.Sample.Get;
 using Boleyn.Countries.Content.Exceptions;
 using FizzWare.NBuilder;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Shouldly;
+using Threenine.ApiResponse;
 using Xunit;
 
 namespace Countries.Unit.Tests
@@ -28,7 +28,7 @@ namespace Countries.Unit.Tests
         {
             // Arrange
             var request = Builder<Query>.CreateNew().Build();
-            var response = Builder<Response>.CreateNew().Build();
+            var response =  new SingleResponse<Response>(Builder<Response>.CreateNew().Build());
             _mediator.Setup(x => x.Send(It.IsAny<Query>(), default)).ReturnsAsync(response);
             // Act 
             var result = await _classUnderTest.HandleAsync(request, default);
@@ -48,7 +48,7 @@ namespace Countries.Unit.Tests
         {
             // Arrange
             var request = Builder<Query>.CreateNew().Build();
-            _mediator.Setup(x => x.Send(It.IsAny<Query>(), default)).ReturnsAsync((Func<Response>)null);
+            _mediator.Setup(x => x.Send(It.IsAny<Query>(), default)).ReturnsAsync((Func<SingleResponse<Response>>)null);
             // Act 
             var result = await _classUnderTest.HandleAsync(request, default);
 
@@ -58,19 +58,5 @@ namespace Countries.Unit.Tests
             result.ShouldSatisfyAllConditions();
         }
 
-        [Fact]
-        public async Task Should_return_400_response_on_exception()
-        {
-            // Arrange
-            var request = Builder<Query>.CreateNew().Build();
-            _mediator.Setup(x => x.Send(It.IsAny<Query>(), default)).Throws(new CountryCodeException(""));
-            // Act 
-            var result = await _classUnderTest.HandleAsync(request, default);
-
-            // Assert
-            result.ShouldNotBeNull();
-            result.Result.ShouldBeOfType<BadRequestObjectResult>();
-            result.ShouldSatisfyAllConditions();
-        }
     }
 }

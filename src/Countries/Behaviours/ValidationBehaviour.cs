@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Boleyn.Countries.Content.Exceptions;
@@ -11,7 +10,6 @@ using Serilog;
 namespace Boleyn.Countries.Behaviours
 {
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-        where TRequest : IRequest<TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
         private readonly ILogger _logger;
@@ -25,22 +23,29 @@ namespace Boleyn.Countries.Behaviours
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
             RequestHandlerDelegate<TResponse> next)
         {
+       
             if (!_validators.Any()) return await next();
 
             var context = new ValidationContext<TRequest>(request);
             var validationResults =
                 await Task.WhenAll(_validators.Select(v => v.ValidateAsync(context, cancellationToken)));
-            var failures = validationResults.SelectMany(r => r.Errors).Where(f => f != null).ToList();
-          
-            if (!failures.Any()) return await next();
+            var failures = validationResults.SelectMany(r => r.Errors)
+                .Where(f => f != null)
+                .GroupBy(   x => x.PropertyName,
+                    x => x.ErrorMessage,
+                    (propertyName, errorMessages) => new
+                    {
+                        Key = propertyName,
+                        Values = errorMessages.Distinct().ToArray()
+                    })
+                .ToDictionary(x => x.Key, x => x.Values);
 
-            var sb = new StringBuilder();
-            failures.ForEach(f =>
+            if (failures.Any())
             {
-                _logger.Information($"Validation Error: Property -{f.PropertyName}  Severity -{f.Severity} Value- {f.AttemptedValue}   ");
-                sb.Append(f.ErrorMessage);
-            });
-            throw new CountryValidationException(sb.ToString());
+                throw new ValidationsException("Validation failed", failures);
+            }
+            return await next();
+           
         }
     }
 }
