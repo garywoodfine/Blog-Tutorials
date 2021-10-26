@@ -92,6 +92,7 @@
 /home/garyw/code/Blog-Tutorials/src/Countries/bin/Debug/net5.0/WorldBank.Models.dll
 /home/garyw/code/Blog-Tutorials/src/Countries/bin/Debug/net5.0/WorldBank.Models.pdb
 /home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Countries.csprojAssemblyReference.cache
+/home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Countries.csproj.GenerateResource.cache
 /home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Countries.GeneratedMSBuildEditorConfig.editorconfig
 /home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Countries.AssemblyInfoInputs.cache
 /home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Countries.AssemblyInfo.cs
@@ -107,3 +108,5 @@
 /home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/ref/Countries.dll
 /home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Countries.pdb
 /home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Countries.genruntimeconfig.cache
+/home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Boleyn.Countries.Resources.ExceptionMessage.resources
+/home/garyw/code/Blog-Tutorials/src/Countries/obj/Debug/net5.0/Boleyn.Countries.Resources.ExceptionTitle.resources

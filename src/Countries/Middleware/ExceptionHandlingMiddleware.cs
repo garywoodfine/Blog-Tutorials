@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Boleyn.Countries.Content.Exceptions;
+using Boleyn.Countries.Resources;
 using Microsoft.AspNetCore.Http;
 
 namespace Boleyn.Countries.Content.Middleware
@@ -42,13 +43,15 @@ namespace Boleyn.Countries.Content.Middleware
         private static string GetTitle(Exception exception) =>
             exception switch
             {
-                CountriesException ce => ce.Title,
+                ValidationException ve => ve.Title,
+                NotFoundException nf => nf.Title,
+               
                 _ => "Server Error"
             };
         private static int GetStatusCode(Exception exception) =>
             exception switch
             {
-                ValidationsException => StatusCodes.Status400BadRequest,
+                ValidationException => StatusCodes.Status400BadRequest,
                 NotFoundException => StatusCodes.Status404NotFound,
                 _ => StatusCodes.Status500InternalServerError
             };
@@ -58,7 +61,7 @@ namespace Boleyn.Countries.Content.Middleware
         {
             IReadOnlyDictionary<string, string[]> errors = null;
 
-            if (exception is ValidationsException validationException)
+            if (exception is ValidationException validationException)
             {
                 errors = validationException.Errors;
             }

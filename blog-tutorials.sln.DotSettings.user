@@ -14,4 +14,20 @@
     &lt;/TestAncestor&gt;
     &lt;Project Location="/home/garyw/code/Blog-Tutorials/tests/Countries.Unit.Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Countries.Unit.Tests&amp;gt;" /&gt;
   &lt;/Or&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Countries_002FResources_002FExceptionMessage/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Countries_002FResources_002FExceptionTitle/@EntryIndexedValue">True</s:Boolean>
+	
+	
+	
+	
+	<s:String x:Key="/Default/ResxEditorPersonal/DisabledLanguages/@EntryValue">cy,cy-gb,en,en-gb,en-us,fr</s:String>
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/OrderByFullPath/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyErrors/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyStringResources/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

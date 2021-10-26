@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Boleyn.Countries.Content.Exceptions;
+using Boleyn.Countries.Resources;
 using FluentValidation;
 using MediatR;
 using Serilog;
+using ValidationException = Boleyn.Countries.Content.Exceptions.ValidationException;
 
 namespace Boleyn.Countries.Behaviours
 {
@@ -13,11 +14,11 @@ namespace Boleyn.Countries.Behaviours
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
         private readonly ILogger _logger;
-
         public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators, ILogger logger)
         {
             _validators = validators;
             _logger = logger;
+         
         }
 
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
@@ -42,7 +43,7 @@ namespace Boleyn.Countries.Behaviours
 
             if (failures.Any())
             {
-                throw new ValidationsException("Validation failed", failures);
+               throw new ValidationException(ExceptionMessage.Validation, failures);
             }
             return await next();
            

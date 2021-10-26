@@ -1,8 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
-using Boleyn.Countries.Content.Activities;
-using Boleyn.Countries.Content.Exceptions;
+using Boleyn.Countries.Resources;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +9,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace Boleyn.Countries.Activities.Country.Get
 {
-    [Route(Routes.Country)]
+    [Route("country")]
     public class Get : BaseAsyncEndpoint.WithRequest<Query>.WithResponse<Response>
     {
         private readonly IMediator _mediator;
@@ -25,7 +24,7 @@ namespace Boleyn.Countries.Activities.Country.Get
             Summary = "Retrieve a sample response by id ",
             Description = "Retrieves a sample response ",
             OperationId = "EF0A3653-153F-4E73-8D20-621C9F9FFDC9",
-            Tags = new[] { Routes.Country })
+            Tags = new[] { "country" })
         ]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

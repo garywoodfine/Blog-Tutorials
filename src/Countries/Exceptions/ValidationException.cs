@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Boleyn.Countries.Resources;
 
 namespace Boleyn.Countries.Content.Exceptions
 {
     [Serializable]
-    public class ValidationsException : CountriesException
+    public class ValidationException : CountriesException
     {
-        public ValidationsException(string message, IReadOnlyDictionary<string, string[]> errors) : base(ExceptionName.Validation , message) =>
+        public ValidationException(string message, IReadOnlyDictionary<string, string[]> errors) : base(ExceptionTitle.Validation , message) =>
             Errors = errors;
 
         public IReadOnlyDictionary<string, string[]> Errors { get; }

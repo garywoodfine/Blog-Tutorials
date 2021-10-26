@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using Boleyn.Countries.Behaviours;
 using Boleyn.Countries.Content.Middleware;
 using Boleyn.Countries.Content.Providers;
@@ -7,6 +9,7 @@ using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -40,8 +43,7 @@ namespace Boleyn.Countries.Content
             services.AddMediatR(typeof(Startup))
                 .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
                 .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-          
-
+            services.AddLocalization();
             services.AddAutoMapper(typeof(Startup));
             services.AddHttpClient<IProvider<Country>, CountryProvider>(client =>
             {
