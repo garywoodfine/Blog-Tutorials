@@ -1,12 +1,9 @@
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
-using Boleyn.Countries.Resources;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Boleyn.Countries.Activities.Country.Get
@@ -30,7 +27,7 @@ namespace Boleyn.Countries.Activities.Country.Get
         ]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequestObjectResult))]
         [ProducesErrorResponseType(typeof(BadRequestResult))]
         [Produces("application/json")]
         public override async Task<ActionResult<Response>> HandleAsync([FromRoute] Query query,

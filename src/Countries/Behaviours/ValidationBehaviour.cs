@@ -1,16 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using Boleyn.Countries.Activities.Country.Get;
-using Boleyn.Countries.Resources;
 using FluentValidation;
 using MediatR;
 using Serilog;
 using Threenine.ApiResponse;
-using ValidationException = Boleyn.Countries.Content.Exceptions.ValidationException;
 
 namespace Boleyn.Countries.Behaviours
 {
@@ -48,9 +44,20 @@ namespace Boleyn.Countries.Behaviours
             if (!failures.Any()) return await next();
             
             var responseType = typeof(TResponse).GetGenericArguments()[0];
-            var invalidResponseType = typeof(SingleResponse<>).MakeGenericType(responseType);
-            var inValidResponse = Activator.CreateInstance(invalidResponseType, null, failures.ToList()) as TResponse;
-            return inValidResponse;
+            // TODO: Tidy this up to make use of reflection a little better to get basetype of class
+            if (responseType.BaseType.Name.Contains("SingleResponse"))
+            {
+                var invalidResponseType = typeof(SingleResponse<>).MakeGenericType(responseType);
+                var inValidResponse = Activator.CreateInstance(invalidResponseType, null, failures.ToList()) as TResponse;
+                return inValidResponse;
+            }
+            else
+            {
+                var invalidResponseType = typeof(ListResponse<>).MakeGenericType(responseType);
+                var inValidResponse = Activator.CreateInstance(invalidResponseType, null, failures.ToList()) as TResponse;
+                return inValidResponse;
+            }
+          
 
         }
     }
