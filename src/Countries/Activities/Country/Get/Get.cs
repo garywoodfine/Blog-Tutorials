@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
@@ -5,6 +6,7 @@ using Boleyn.Countries.Resources;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Boleyn.Countries.Activities.Country.Get
@@ -35,7 +37,8 @@ namespace Boleyn.Countries.Activities.Country.Get
             CancellationToken cancellationToken = new())
         {
             var result = await _mediator.Send(query, cancellationToken);
-            return new OkObjectResult(result.Item);
+            return  result.IsValid ?  new OkObjectResult(result.Item) : new BadRequestObjectResult(result.Errors);
+            
         }
     }
 }

@@ -25,10 +25,7 @@ namespace Boleyn.Countries.Content.Providers
 
             if (responseJson.Contains("message")) throw new NotFoundException($"No Country found for code {predicate}");
             var obj = JsonConvert.DeserializeObject<JArray>(responseJson);
-            return  JsonConvert.DeserializeObject<Country>(obj[1][0].ToString());;
-
-           
-
+            return  JsonConvert.DeserializeObject<Country>(obj[1][0].ToString());
         }
     }
 }

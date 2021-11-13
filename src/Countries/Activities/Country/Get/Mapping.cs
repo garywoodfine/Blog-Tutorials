@@ -7,7 +7,7 @@ namespace Boleyn.Countries.Activities.Country.Get
     {
         public Mapping()
         {
-            CreateMap<WorldBank.Models.Country, Response>()
+            CreateMap<WorldBank.Models.Country, Activities.Country.Get.CountryDetail>()
                 .ForMember(x => x.Capital, opt => opt.MapFrom(src => src.Name))
                 .ForMember(x => x.Region, opt => opt.MapFrom(src => src.Region.Value))
                 .ForMember(x => x.Latitude, opt => opt.MapFrom(src => src.Latitude))

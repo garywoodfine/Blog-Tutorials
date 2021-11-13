@@ -16,8 +16,8 @@
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String>
 	
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Countries_002FResources_002FExceptionMessage/@EntryIndexedValue">False</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Countries_002FResources_002FExceptionTitle/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Countries_002FResources_002FExceptionMessage/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Countries_002FResources_002FExceptionTitle/@EntryIndexedValue">False</s:Boolean>
 	
 	
 	

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Boleyn.Countries.Content.Exceptions;
-using Boleyn.Countries.Resources;
 using Microsoft.AspNetCore.Http;
 
 namespace Boleyn.Countries.Content.Middleware
@@ -18,16 +17,16 @@ namespace Boleyn.Countries.Content.Middleware
             }
             catch (Exception e)
             {
-                await HandleValidationException(context, e);
+                await HandleException(context, e);
             }
         }
 
-        private static async Task HandleValidationException(HttpContext httpContext, Exception exception)
+        private static async Task HandleException(HttpContext httpContext, Exception exception)
         {
             var statusCode = GetStatusCode(exception);
 
             var response = new
-            { 
+            {
                 title = GetTitle(exception),
                 status = statusCode,
                 detail = exception.Message,
@@ -40,14 +39,16 @@ namespace Boleyn.Countries.Content.Middleware
 
             await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
         }
+
         private static string GetTitle(Exception exception) =>
             exception switch
             {
                 ValidationException ve => ve.Title,
                 NotFoundException nf => nf.Title,
-               
+
                 _ => "Server Error"
             };
+
         private static int GetStatusCode(Exception exception) =>
             exception switch
             {
@@ -55,7 +56,7 @@ namespace Boleyn.Countries.Content.Middleware
                 NotFoundException => StatusCodes.Status404NotFound,
                 _ => StatusCodes.Status500InternalServerError
             };
-        
+
 
         private static IReadOnlyDictionary<string, string[]> GetErrors(Exception exception)
         {

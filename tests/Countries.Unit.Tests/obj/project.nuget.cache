@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WhLkWytYV+1xT2CgYgaMvWIoQ3Awp5L8hb7JR/oybG/jppWfVO8hzJbV0yvYpZWYcr07NJ80aDCdLOZMV84Iyg==",
+  "dgSpecHash": "Ts5VpEJ+JiRI0G2k0DtEiL1r2FODHNsMSs0/j9asLDaVZ1dQxJfNq1JEG6L0aNvL7+1ou9wEbHI8AqbD7OQdDg==",
   "success": true,
   "projectFilePath": "/home/garyw/code/Blog-Tutorials/tests/Countries.Unit.Tests/Countries.Unit.Tests.csproj",
   "expectedPackageFiles": [
@@ -215,7 +215,7 @@
     "/home/garyw/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/garyw/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/garyw/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "/home/garyw/.nuget/packages/threenine.apiresponse/0.1.30/threenine.apiresponse.0.1.30.nupkg.sha512",
+    "/home/garyw/.nuget/packages/threenine.apiresponse/0.1.37/threenine.apiresponse.0.1.37.nupkg.sha512",
     "/home/garyw/.nuget/packages/xunit/2.4.1/xunit.2.4.1.nupkg.sha512",
     "/home/garyw/.nuget/packages/xunit.abstractions/2.0.3/xunit.abstractions.2.0.3.nupkg.sha512",
     "/home/garyw/.nuget/packages/xunit.analyzers/0.10.0/xunit.analyzers.0.10.0.nupkg.sha512",

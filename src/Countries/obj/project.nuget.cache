@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gLqwM1GhgCBDgGeElqA/nWf7Vv7OBAlAP7ITcJmLnSrh0YAkQVnoIyU+M9LlpQR5E1FtxB0KuAu+0CchTd9moA==",
+  "dgSpecHash": "ssJD36Yl68q2dkVTzkoRtotNIuNdIe1D4+zFgcplYlB4/PmumQNkU37n3e7eTOpah1KLVYvN6PlfmU/QF+OxCw==",
   "success": true,
   "projectFilePath": "/home/garyw/code/Blog-Tutorials/src/Countries/Countries.csproj",
   "expectedPackageFiles": [
@@ -110,7 +110,7 @@
     "/home/garyw/.nuget/packages/system.threading.timer/4.0.1/system.threading.timer.4.0.1.nupkg.sha512",
     "/home/garyw/.nuget/packages/system.xml.readerwriter/4.0.11/system.xml.readerwriter.4.0.11.nupkg.sha512",
     "/home/garyw/.nuget/packages/system.xml.xdocument/4.0.11/system.xml.xdocument.4.0.11.nupkg.sha512",
-    "/home/garyw/.nuget/packages/threenine.apiresponse/0.1.30/threenine.apiresponse.0.1.30.nupkg.sha512"
+    "/home/garyw/.nuget/packages/threenine.apiresponse/0.1.37/threenine.apiresponse.0.1.37.nupkg.sha512"
   ],
   "logs": []
 }
