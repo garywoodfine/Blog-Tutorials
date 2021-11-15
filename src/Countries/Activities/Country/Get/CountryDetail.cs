@@ -3,12 +3,6 @@ using Threenine.ApiResponse;
 
 namespace Boleyn.Countries.Activities.Country.Get
 {
-    public class Response: SingleResponse<CountryDetail>
-    {
-        public Response(CountryDetail model, IList<KeyValuePair<string, string[]>> validationErrors = null) : base(model, validationErrors)
-        {
-        }
-    }
 
     public class CountryDetail
     {

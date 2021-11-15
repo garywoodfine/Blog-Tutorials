@@ -9,7 +9,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace Boleyn.Countries.Activities.Country.Get
 {
     [Route("country")]
-    public class Get : BaseAsyncEndpoint.WithRequest<Query>.WithResponse<Response>
+    public class Get : BaseAsyncEndpoint.WithRequest<Query>.WithResponse<CountryDetail>
     {
         private readonly IMediator _mediator;
 
@@ -25,12 +25,12 @@ namespace Boleyn.Countries.Activities.Country.Get
             OperationId = "EF0A3653-153F-4E73-8D20-621C9F9FFDC9",
             Tags = new[] { "country" })
         ]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CountryDetail))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequestObjectResult))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesErrorResponseType(typeof(BadRequestResult))]
         [Produces("application/json")]
-        public override async Task<ActionResult<Response>> HandleAsync([FromRoute] Query query,
+        public override async Task<ActionResult<CountryDetail>> HandleAsync([FromRoute] Query query,
             CancellationToken cancellationToken = new())
         {
             var result = await _mediator.Send(query, cancellationToken);

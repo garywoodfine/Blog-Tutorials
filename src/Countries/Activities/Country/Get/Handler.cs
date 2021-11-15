@@ -7,7 +7,7 @@ using Threenine.ApiResponse;
 
 namespace Boleyn.Countries.Activities.Country.Get
 {
-    public class Handler : IRequestHandler<Query, SingleResponse<Response>>
+    public class Handler : IRequestHandler<Query, SingleResponse<CountryDetail>>
     {
         private readonly IProvider<WorldBank.Models.Country> _provider;
         private readonly IMapper _mapper;
@@ -18,10 +18,10 @@ namespace Boleyn.Countries.Activities.Country.Get
             _mapper = mapper;
         }
 
-        public async Task<SingleResponse<Response>> Handle(Query query, CancellationToken cancellationToken)
+        public async Task<SingleResponse<CountryDetail>> Handle(Query query, CancellationToken cancellationToken)
         {
                 var country = await _provider.Get(query.IsoCode);
-                return new SingleResponse<Response>(_mapper.Map<Response>(country));
+                return new SingleResponse<CountryDetail>(_mapper.Map<CountryDetail>(country));
         }
     }
 }
