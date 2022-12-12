@@ -1,17 +1,13 @@
-using Boleyn.Database.Postgre;
 using Cms.Behaviours;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
-using Threenine.Data.DependencyInjection;
 
 namespace Cms
 {
@@ -35,9 +31,6 @@ namespace Cms
                 c.CustomSchemaIds(x => x.FullName);
             });
             
-            services.AddDbContext<BoleynContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("tutorials"))
-            ).AddUnitOfWork<BoleynContext>();
             services.AddAutoMapper(typeof(Startup));
             services.AddMediatR(typeof(Startup));
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
@@ -62,7 +55,7 @@ namespace Cms
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
-           // app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+           app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }

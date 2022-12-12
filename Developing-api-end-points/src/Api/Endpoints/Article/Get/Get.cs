@@ -21,12 +21,12 @@ namespace Cms.Endpoints.Article.Get
             _mediator = mediator;
         }
 
-        [HttpGet("{id:guid}")]
+        [HttpGet("{category}/{id}")]
         [SwaggerOperation(
             Summary = "Retrieve an article by id ",
             Description = "Retrieves a full articles ",
             OperationId = "EF0A3653-153F-4E73-8D20-621C9F9FFDC9",
-            Tags = new[] {"Article"})
+            Tags = new[] {Routes.Article})
         ]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,9 +35,14 @@ namespace Cms.Endpoints.Article.Get
         public override async  Task<ActionResult<Response>> HandleAsync([FromRoute] Query query,
             CancellationToken cancellationToken = new())
         {
-            var article = await _mediator.Send(query, cancellationToken);
-            if (article == null) return new NotFoundResult();
-            return new OkObjectResult(article);
+            return await Task.Run(() => new OkObjectResult(new Response
+            {
+                Content = "blah blah blah",
+                Description = "This is a Fine Description",
+                Published = DateTime.Now.AddHours(-10),
+                Summary = "this is a fine Summary",
+                SubHeading = "This is a sub heading"
+            }), cancellationToken);
         }
     }
 }
