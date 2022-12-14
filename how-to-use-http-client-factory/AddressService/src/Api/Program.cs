@@ -1,17 +1,14 @@
 using Api.Behaviours;
 using Api.Middleware;
-using Database.AddressServices;
-using FluentValidation;
+using Common;
+using Domain;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Services;
 using Threenine;
-using Threenine.Data.DependencyInjection;
 using Threenine.Services;
-
-const string ConnectionsStringName = "Local_DB";
-
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -35,13 +32,33 @@ builder.Services.AddSwaggerGen(c =>
     c.EnableAnnotations();
 });
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
-builder.Services.AddValidatorsFromAssemblies(new[] { typeof(Program).Assembly , typeof(AddressServiceContext).Assembly});
+
 builder.Services.AddMediatR(typeof(Program))
     .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
     .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
-var connectionString = builder.Configuration.GetConnectionString(ConnectionsStringName);
-builder.Services.AddDbContext<AddressServiceContext>(x => x.UseNpgsql(connectionString)).AddUnitOfWork<AddressServiceContext>();
+builder.Services.Configure<AfdSettings>(builder.Configuration.GetSection(Constants.AfdSettings)).AddHttpClient<IAddressDataProvider, AddressProvider>().ConfigureHttpClient(
+    (config, client) =>
+    {
+        var settings = config.GetRequiredService<IOptions<AfdSettings>>().Value;
+
+        var afdBaseAddress = new UriBuilder(settings.Endpoint);
+        var parameters = new AfdParameterBuilder()
+            .Create()
+            .Data(settings.Data)
+            .CountryCode(settings.CountryISO)
+            .Serial(settings.Serial)
+            .Password(settings.Password)
+            .Task(settings.Task)
+            .Format(settings.Format)
+            .Fields(settings.Fields)
+            .Build();
+        afdBaseAddress.Query = parameters;
+
+        client.BaseAddress = afdBaseAddress.Uri;
+    });
+
+
 
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient(typeof(IEntityValidationService<>),typeof(EntityValidationService<>));
@@ -53,12 +70,6 @@ var app = builder.Build();
 app.UseSerilogRequestLogging();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
-// Database migrations
-using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
-{
-    var context = serviceScope.ServiceProvider.GetService<AddressServiceContext>();
-    context?.Database.Migrate();
-}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -11,7 +11,7 @@ public class AfdParameterBuilder
  
     public AfdParameterBuilder Create(string? baseQuery = default)
     {
-        _parameterString = string.IsNullOrEmpty(baseQuery) ? new StringBuilder(baseQuery?.Substring(1, baseQuery.Length)) : new StringBuilder();
+        _parameterString = string.IsNullOrEmpty(baseQuery) ?  new StringBuilder(): new StringBuilder(baseQuery?.Substring(1, baseQuery.Length -1)) ;
         return this;
     }
 

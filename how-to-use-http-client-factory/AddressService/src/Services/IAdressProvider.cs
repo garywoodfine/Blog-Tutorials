@@ -4,5 +4,6 @@ namespace Services;
 
 public interface IAddressDataProvider
 {
-    Task<Source> GetByPostCode(string postcode, CancellationToken cancellationToken);
+    Task<Source?> GetByPostCode(string postcode, CancellationToken cancellationToken);
+  
 }
