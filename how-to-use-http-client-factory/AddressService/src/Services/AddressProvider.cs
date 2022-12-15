@@ -15,9 +15,6 @@ public class AddressProvider : IAddressDataProvider
 
     public async Task<Source?> GetByPostCode(string postcode, CancellationToken cancellationToken)
     {
-      
-
-    
         var response =
             await _httpClient?.GetAsync(RequestPath(postcode), cancellationToken)!;
         response.EnsureSuccessStatusCode();
@@ -28,17 +25,14 @@ public class AddressProvider : IAddressDataProvider
 
     private string RequestPath(string postcode)
     {
-        var query = new AfdParameterBuilder()
-            .Create(_httpClient?.BaseAddress?.Query)
-            .Lookup(postcode)
-            .Build();
-
         var updateRequested = new UriBuilder(_httpClient?.BaseAddress?.ToString()!)
         {
-            Query = query
+            Query = new AfdParameterBuilder()
+                .Create(_httpClient?.BaseAddress?.Query)
+                .Lookup(postcode)
+                .Build()
         };
 
         return updateRequested.Uri.ToString();
-
     }
 }

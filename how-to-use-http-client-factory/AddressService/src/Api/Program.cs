@@ -37,6 +37,7 @@ builder.Services.AddMediatR(typeof(Program))
     .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
     .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
+// Configure the AFD Postcode Look up service Typed Client 
 builder.Services.Configure<AfdSettings>(builder.Configuration.GetSection(Constants.AfdSettings)).AddHttpClient<IAddressDataProvider, AddressProvider>().ConfigureHttpClient(
     (config, client) =>
     {
@@ -57,8 +58,6 @@ builder.Services.Configure<AfdSettings>(builder.Configuration.GetSection(Constan
 
         client.BaseAddress = afdBaseAddress.Uri;
     });
-
-
 
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient(typeof(IEntityValidationService<>),typeof(EntityValidationService<>));

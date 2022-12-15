@@ -20,8 +20,4 @@
     <ProjectReference Include="..\..\src\Api\Api.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Activities" />
-  </ItemGroup>
-
 </Project>
