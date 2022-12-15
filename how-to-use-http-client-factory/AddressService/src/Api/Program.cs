@@ -2,6 +2,7 @@ using Api.Behaviours;
 using Api.Middleware;
 using Common;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
@@ -32,13 +33,14 @@ builder.Services.AddSwaggerGen(c =>
     c.EnableAnnotations();
 });
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
-
+builder.Services.AddValidatorsFromAssemblies(new[] { typeof(Program).Assembly });
 builder.Services.AddMediatR(typeof(Program))
     .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
     .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
 // Configure the AFD Postcode Look up service Typed Client 
-builder.Services.Configure<AfdSettings>(builder.Configuration.GetSection(Constants.AfdSettings)).AddHttpClient<IAddressDataProvider, AddressProvider>().ConfigureHttpClient(
+builder.Services.Configure<AfdSettings>(builder.Configuration.GetSection(Constants.AfdSettings))
+    .AddHttpClient<IAddressDataProvider, AddressProvider>().ConfigureHttpClient(
     (config, client) =>
     {
         var settings = config.GetRequiredService<IOptions<AfdSettings>>().Value;

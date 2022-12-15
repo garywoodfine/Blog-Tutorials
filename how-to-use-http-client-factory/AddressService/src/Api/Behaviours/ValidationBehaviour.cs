@@ -1,11 +1,12 @@
 using FluentValidation;
 using MediatR;
+using Threenine.ApiResponse;
 using ILogger = Serilog.ILogger;
 
 namespace Api.Behaviours
 {
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest,TResponse>
-        where TResponse : class where TRequest : IRequest<TResponse>
+        where TRequest : IRequest<TResponse> where TResponse : class
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;
         private readonly ILogger _logger;
@@ -37,7 +38,7 @@ namespace Api.Behaviours
                 .ToDictionary(x => x.Key, x => x.Values);
 
             if (!failures.Any()) return await next();
-
+            _logger.Error("Validation Errors",failures);
             return Activator.CreateInstance(typeof(TResponse), null, failures.ToList()) as TResponse;
         }
     }
