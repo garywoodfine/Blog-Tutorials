@@ -10,6 +10,7 @@ The code in this project is a culmination of a number of articles and blog posts
 - [How to run docker compose files in Rider](https://garywoodfine.com/how-to-run-docker-compose-files-in-rider "How to run docker compose files in Rider | Gary Woodfine")
 - [How to use MediatR Pipeline Behaviours](https://garywoodfine.com/how-to-use-mediatr-pipeline-behaviours/ "How to use MediatR Pipeline Behaviours | Gary Woodfine") 
 - [How to implement cross cutting concerns with MediatR Pipeline Behaviours](https://garywoodfine.com/how-to-implement-cross-cutting-concerns-with-mediatr-pipeline-behaviours/ "How to implement cross cutting concerns with MediatR Pipeline Behaviours") 
+- [How to use HttpClientFactory in dotnet](https://garywoodfine.com/how-to-use-httpclientfactory-in-dotnet/ "How to use HttpClientFactory in dotnet - Gary Woodfine")
 
 ## Sponsored by
 [![threenine logo](http://static.threenine.co.uk/img/github_footer.png)](https://threenine.co.uk/)
