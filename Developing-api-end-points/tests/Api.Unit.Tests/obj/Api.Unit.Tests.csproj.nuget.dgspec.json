@@ -1,0 +1,224 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/tests/Api.Unit.Tests/Api.Unit.Tests.csproj": {}
+  },
+  "projects": {
+    "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Api/Cms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Api/Cms.csproj",
+        "projectName": "Cms",
+        "projectPath": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Api/Cms.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Ardalis.ApiEndpoints": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Threenine.Data": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/tests/Api.Unit.Tests/Api.Unit.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/tests/Api.Unit.Tests/Api.Unit.Tests.csproj",
+        "projectName": "Api.Unit.Tests",
+        "projectPath": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/tests/Api.Unit.Tests/Api.Unit.Tests.csproj",
+        "packagesPath": "/home/gary/.nuget/packages/",
+        "outputPath": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/tests/Api.Unit.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gary/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Api/Cms.csproj": {
+                "projectPath": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Api/Cms.csproj"
+              },
+              "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Cms/Cms.csproj": {
+                "projectPath": "/home/gary/Documents/garywoodfine/Blog-Tutorials/Developing-api-end-points/src/Cms/Cms.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.7.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
+            "NBuilder": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Shouldly": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
