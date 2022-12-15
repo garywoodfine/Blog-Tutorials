@@ -21,5 +21,10 @@ public static class RegularExpressions
     /// Common relative path structure validation
     /// </summary>
     public const string RelativeUrlPath = @"^([\/][a-zA-Z]+)+\.*(((\?)([a-zA-Z]*=\w*)){1}((&)([a-zA-Z]*=\w*))*)?$";
-    
+
+    /// <summary>
+    /// Simp
+    /// </summary>
+    public const string PostCodeValidator = @"^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}|GIR ?0A{2})$";
+
 }
