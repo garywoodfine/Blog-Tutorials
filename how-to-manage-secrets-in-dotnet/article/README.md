@@ -1,6 +1,6 @@
 When working on software projects there will undoubtedly be a number of configuration items that will be required for various libraries extensions and  API's , typically these may require us to store application credentials, API keys, SSH keys, database passwords, encryption keys, and so on. access etc required.  In many cases these setting items will need to be kept secret, in that there values need to kept hidden but at the same time used through out the application.  
 
-In dotnet applications developers will typically tend to store Configuration values in the JSON based text file in the root of their project directory typically named appsettings.json . The main problem with storing settings in this file is that they are typically stored in open text and can be easily read and shared with anyone.
+In dotnet applications developers will typically tend to store Configuration values in the JSON based text file in the root of their project directory typically named `appsettings.json` . The main problem with storing settings in this file is that they are typically stored in open text and can be easily read and shared with anyone. 
 
 ```json
 {
@@ -14,9 +14,9 @@ In dotnet applications developers will typically tend to store Configuration val
 }
 ```
 
-If this file is ever accidentally committed to an version control repository, such as GitHub or Gitlab these values can then be read by anyone who can gain access to the repository. If this is a repository is a public repository then these values are open to the public.
+A massive risk and often the root of all accidential exposure, is if this file is ever accidentally committed to an version control repository, such as GitHub or Gitlab these values can then be read by anyone who can gain access to the repository. If this is a repository is a public repository then these values are open to the public.
 
-The added problem if these values are ever mistakenly committed to a version control repository, and then quickly deleted their values will still be available in Git history file, and there values can be extracted by reviewing the history.
+The added problem if these values are ever mistakenly committed to a version control repository, and then quickly deleted their values will still be available in Git history file, and there values can be extracted by reviewing the history. 
 
 ### Secret Management in dotnet
 
@@ -66,8 +66,40 @@ For the sake of this tutorial, we want to add some details relating to the endpo
 }
 ```
 
+#### How to initialise the user secret store
+
+To be able to add ou secrets to a secret store we first need to initialise a secret store for out project. The **Secret Manager** tool operates on project-specific configuration settings stored in your user profile.
+
+In order to initialise the secret manager we can use the `init` command. We need to change into the project directory where the `.csproj` which we want to manage secrets for. For instance in my case the secrets I want to add is for `Api.csproj` in the `src` so effectively I need to change directory to `cd src/Api`  or you can use the --project switch to target the project.
+
+execute the command as per your preference:
+
+
+
+```sh
+dotnet user-secrets init  --project "src/Api/Api.csproj"
+```
+
+This command updates the chosen .csproj file with an additional tag containing a new Guid ID for a folder on your machine where the secrets you'll add will be stored. This folder will be created in `.microsoft\usersecrets` in your home folder.  The Guid folder will not be created at this point.
+
+
+```xml
+<PropertyGroup>  
+   <UserSecretsId>c63a71b4-51b0-4a67-91c3-77d1554c319c</UserSecretsId>
+</PropertyGroup>
+```
+
+#### How to set a secret in the user secret store
+
+Once we've initialised the secret store we can now start adding secrets to it.  To do this we can use the `add` method of the Secret manager. If as in my case you want to add a secret for specific group of settings in your application i.e AdfSettings , then we need to use a colon `:` to associate and object literal with a property.  i.e. "AdfSettings:Password"
+ 
 We can now add our secrets we'd like to keep in the secret store for this application using the following command in the terminal window
 
 ```sh
-dotnet user-secrets add "AfdSettings_
+dotnet user-secrets set "AfdSettings:Password" "S0meFunkyP@ssw0rd"
 ```
+
+This command will create a `secrets.json` file in the folder `.microsoft/usersecrets/c63a71b4-51b0-4a67-91c3-77d1554c319c`  
+
+
+
