@@ -34,11 +34,11 @@ dotnet user-secrets --help
 
 Which will provide you with output that looks something similar to this screenshot below:
 
-[image goes here]
+[Dotnet user-secret help image]
 
 Using these terminal commands you can view, set, edit and remove any secrets for any projects that you have defined secrets for locally.
 
-In order to learn how to use secret Manager lets create a simple project, I'll be making use of API Template Pack to generate a new REST API project, which I simply create using the following command in terminal window. The full instructions on how to install and use the API Template Pack are available on Getting Started with the API Template Pack.
+In order to learn how to use secret Manager lets create a simple project, I'll be making use of API Template Pack to generate a new REST API project, which I simply create using the following command in terminal window. The full instructions on how to install and use the [API Template Pack](https://www.apitemplatepack.com/) are available on [Getting Started with the API Template Pack](https://www.apitemplatepack.com/docs/getting-started).
 
 ```sh
 dotnet new apisolution -n AddressService --root Threenine
@@ -46,7 +46,7 @@ dotnet new apisolution -n AddressService --root Threenine
 
 The command will generate a complete REST API project template with everything ready to start implementing REST Resource Based API's
 
-[image goes here]
+[API template pack image here]
 
 
 Navigate to the `appsettings.json` file in the root of the API project, then add the following Configuration values.  We will initially just set them all to empty.
@@ -68,7 +68,7 @@ For the sake of this tutorial, we want to add some details relating to the endpo
 
 #### How to initialise the user secret store
 
-To be able to add ou secrets to a secret store we first need to initialise a secret store for out project. The **Secret Manager** tool operates on project-specific configuration settings stored in your user profile.
+To be able to add our secrets to a secret store we first need to initialise a secret store for our project. The **Secret Manager** tool operates on project-specific configuration settings stored in your user profile.
 
 In order to initialise the secret manager we can use the `init` command. We need to change into the project directory where the `.csproj` which we want to manage secrets for. For instance in my case the secrets I want to add is for `Api.csproj` in the `src` so effectively I need to change directory to `cd src/Api`  or you can use the --project switch to target the project.
 
@@ -85,9 +85,14 @@ This command updates the chosen .csproj file with an additional tag containing a
 
 ```xml
 <PropertyGroup>  
-   <UserSecretsId>c63a71b4-51b0-4a67-91c3-77d1554c319c</UserSecretsId>
+   <UserSecretsId>9eb42fc1-3963-41e1-9f8d-5babce0e5f83</UserSecretsId>
 </PropertyGroup>
 ```
+
+> If the `.csproj` already has this setting applied, there is no need to re-initialise the project for dotnet secret management. All that is required is for a valid GUID to exist.  This is important in a team environment because if all team members individually execute `init` on the project file a new GUID will be updated.
+
+If a GUID has already defined then you can proceeed to the next section to set a secret in the user secret store.
+
 
 #### How to set a secret in the user secret store
 
@@ -97,9 +102,49 @@ We can now add our secrets we'd like to keep in the secret store for this applic
 
 ```sh
 dotnet user-secrets set "AfdSettings:Password" "S0meFunkyP@ssw0rd"
+
+```
+> You can also use the `--project ` switch with command to define the project you'd like to set a secret for.
+This command will create a `secrets.json` file in the folder `.microsoft/usersecrets/9eb42fc1-3963-41e1-9f8d-5babce0e5f83`  
+
+```json
+﻿{
+  "AfdSettings:Password": "S0meFunkyP@ssw0rd"
+}
 ```
 
-This command will create a `secrets.json` file in the folder `.microsoft/usersecrets/c63a71b4-51b0-4a67-91c3-77d1554c319c`  
+[dotnet screct json image here]
 
 
+You can repeat this process for setting each secret you'd like to store. Which is great, but usually on projects there will often be a number of secrets to set and it can get tiresome and error prone for developers to set each secret individually.
+
+### How to set multiple secrets for a project
+
+On largish projects there may be multiple secrets to set, and often there will be Development versions or development account details that all developers need to share. Which may be available in some kind of Shared portal directory like MS Teams, Slack, confluence etc. That developers will have to enter.  One approach to solving this problem is create the secrets.json on one machine and share the file will all developers to register it. You can use the secrets manager with standard bash functionality to make this easier.
+
+In this example, I have downloaded the `secrets.json` file to my Documents folder, and I would like to apply the secrets to my API project in my tutorial repository.
+
+```sh
+cat ./secrets.json  | dotnet user-secrets set  --project "garywoodfine/Blog-Tutorials/how-to-manage-secrets-in-dotnet/code/AddressService/src/Api/Api.csproj"
+```
+
+[Mulitple -secret screen shot]
+
+### How to list user secrets for a project
+ 
+ TO check the secrets defined in the project, you can either navigate to the hidden folder on your machine or alternatively just use the CLI tool to list the secrets for you making use of the `list` command.
+ In my case I want to list the secrets for my API project as follows
+ 
+ ```sh
+ dotnet user-secrets list --project src/Api/Api.csproj 
+
+ ```
+
+### Conclusion
+
+Using the dotnet user-secrets is one of the many ways to manage secrets in dotnet apps, it's one of the most basic approaches and can be really convenient from a development perspective.  I have seen this approach used in some production environments but not for storing sensitive secrets.
+
+The points to bear in mind with this approach is that Secrets are stored in an unencrypted text file on your local machine albeit in a hidden folder.  So anybody who can gain access to the machine and is aware of the hidden folder will be able to get access to view the secrets.
+
+In a forthcoming post we will take a look at how to wire up secrets using Configuration object and entirely from code.  We will also dig deeper into alternative more secure ways in how to manage your secrets.
 
