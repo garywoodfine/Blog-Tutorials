@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  seq:
+    container_name: vaulttutorialkv_seq
+    image: datalust/seq:latest
+    ports:
+      - 80:80
+      - 5341:5341
+    environment:
+      ACCEPT_EULA: Y
+    networks: 
+      - vaulttutorialkv
+  postgres:
+    container_name: vaulttutorialkv_postgre
+    image: postgres
+    env_file:
+      - .env
+    
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - vaulttutorialkv
+    restart: unless-stopped
+networks:
+  vaulttutorialkv:
+    driver: bridge
+volumes:
+  postgres:
