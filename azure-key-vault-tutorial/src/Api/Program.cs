@@ -1,5 +1,6 @@
 using Api.Behaviours;
 using Api.Middleware;
+using Azure.Extensions.AspNetCore.Configuration.Secrets;
 using Azure.Identity;
 using Database.VaultTutorialKVs;
 using FluentValidation;
@@ -12,7 +13,7 @@ using Threenine;
 using Threenine.Data.DependencyInjection;
 using Threenine.Services;
 
-const string ConnectionsStringName = "Local_DB";
+const string ConnectionsStringName = "DefaultConnection";
 
 
 Log.Logger = new LoggerConfiguration()
@@ -44,6 +45,11 @@ builder.Services.AddMediatR(cfg =>
     cfg.AddOpenBehavior(typeof(LoggingBehaviour<,>));
     cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
 });
+var keyVault = builder.Configuration.GetSection(ApplicationConstants.KeyVault).Get<KeyVaultSettings>();
+builder.Configuration.AddAzureKeyVault(new Uri($"https://{keyVault?.Vault}.vault.azure.net/"),
+    new DefaultAzureCredential(),
+    new KeyVaultSecretManager());
+
 var connectionString = builder.Configuration.GetConnectionString(ConnectionsStringName);
 builder.Services.AddDbContext<VaultTutorialKVContext>(x => x.UseNpgsql(connectionString)).AddUnitOfWork<VaultTutorialKVContext>();
 
@@ -51,13 +57,16 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient(typeof(IEntityValidationService<>),typeof(EntityValidationService<>));
 builder.Services.AddTransient(typeof(IDataService<>), typeof(DataService<>));
 
-var keyVault = builder.Configuration.GetSection(ApplicationConstants.KeyVault).Get<KeyVaultSettings>();
+
+
 builder.Services.AddAzureClients(clientBuilder =>
 {
     // Add a KeyVault client
     clientBuilder.AddSecretClient(new Uri($"https://{keyVault?.Vault}.vault.azure.net/"));
     clientBuilder.UseCredential(new DefaultAzureCredential());
 });
+
+
 
 var app = builder.Build();
 
