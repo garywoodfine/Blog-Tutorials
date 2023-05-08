@@ -17,3 +17,4 @@ This repository contains the code for a number of articles and blog posts on my 
 - [How to use HttpClientFactory in dotnet](https://garywoodfine.com/how-to-use-httpclientfactory-in-dotnet/ "How to use HttpClientFactory in dotnet - Gary Woodfine")
 - [How to manage secrets with dotnet user secrets](https://garywoodfine.com/how-to-manage-secrets-in-dotnet/ "How to manage secrets with dotnet user secrets - Gary Woodfine")
 - [How to use Azure Key Vault to manage secrets](https://garywoodfine.com/how-to-use-azure-key-vault-to-manage-secrets/ "How to use Azure Key Vault to manage secrets - Gary Woodfine")
+- [How to use Azure Blob Storage](https://garywoodfine.com/how-to-use-azure-blob-storage/ "How to use Azure Blob Storage - Gary Woodfine")

@@ -8,7 +8,7 @@ public class Handler : IRequestHandler<Command, SingleResponse<Response>>
 {
     private readonly BlobServiceClient _defaultClient;
 
-    public Handler(   BlobServiceClient defaultClient)
+    public Handler(BlobServiceClient defaultClient)
     {
         _defaultClient = defaultClient;
     }
