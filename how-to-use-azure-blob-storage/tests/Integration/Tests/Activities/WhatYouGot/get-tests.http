@@ -1,0 +1,7 @@
+
+GET {{host}}/{{what_you_got_resource_name}}
+accept: text/plain
+
+> ../../../Asserts/Should_be_200_Ok.js
+###
+

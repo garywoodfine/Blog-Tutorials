@@ -1,0 +1,16 @@
+
+POST {{host}}/{{documnets_resource_name}}
+accept: text/plain
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="File"; filename="test.md"
+
+< test.md
+
+--WebAppBoundary--
+
+> ../../../Asserts/Should_be_201.js
+
+###
+
