@@ -18,3 +18,4 @@ This repository contains the code for a number of articles and blog posts on my 
 - [How to manage secrets with dotnet user secrets](https://garywoodfine.com/how-to-manage-secrets-in-dotnet/ "How to manage secrets with dotnet user secrets - Gary Woodfine")
 - [How to use Azure Key Vault to manage secrets](https://garywoodfine.com/how-to-use-azure-key-vault-to-manage-secrets/ "How to use Azure Key Vault to manage secrets - Gary Woodfine")
 - [How to use Azure Blob Storage](https://garywoodfine.com/how-to-use-azure-blob-storage/ "How to use Azure Blob Storage - Gary Woodfine")
+- [How to create a websocket server in dotnet](https://garywoodfine.com/how-to-create-a-websocket-server-in-dotnet/ "How to create a websocket server in dotnet - Gary Woodfine")

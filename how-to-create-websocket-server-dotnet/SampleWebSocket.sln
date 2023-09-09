@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{35129844-B706-4D21-94C7-1804FCB89278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSocket", "src\api\ApiSocket.csproj", "{C6BD428E-71DE-465C-ACDD-330526B0788E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E629729-6B2E-4FA8-B7B7-DB4B6AF8F8E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E629729-6B2E-4FA8-B7B7-DB4B6AF8F8E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E629729-6B2E-4FA8-B7B7-DB4B6AF8F8E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E629729-6B2E-4FA8-B7B7-DB4B6AF8F8E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BD428E-71DE-465C-ACDD-330526B0788E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BD428E-71DE-465C-ACDD-330526B0788E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BD428E-71DE-465C-ACDD-330526B0788E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BD428E-71DE-465C-ACDD-330526B0788E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E629729-6B2E-4FA8-B7B7-DB4B6AF8F8E4} = {F463714D-D27D-4B61-8E76-FB2C089053BA}
+		{C6BD428E-71DE-465C-ACDD-330526B0788E} = {35129844-B706-4D21-94C7-1804FCB89278}
+	EndGlobalSection
+EndGlobal
