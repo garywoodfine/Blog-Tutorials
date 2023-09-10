@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UAubKzKTWKDXVkmI1y9qHaqZNhQV1XKVxJX6mwTPYTXA1ohKTrW7Z9cD0SAIlQV6bjRNYXnEJctD7IQwSXggQw==",
+  "dgSpecHash": "llJ9DEbL2qD+2UYA7FEwn9lveihpVauU1WYbkawVJHrmvitgxCf/eI/jfnXcQpmzePSRg0c0J6K4ytypUAXvJw==",
   "success": true,
   "projectFilePath": "/home/gary/Documents/garywoodfine/blog-tutorials/how-to-create-websocket-server-dotnet/src/api/ApiSocket.csproj",
   "expectedPackageFiles": [
