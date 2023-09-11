@@ -7,7 +7,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace Api.Activities.Sockets.Queries.SampleSocket;
 
-[Route("ws")]
+[Route(Routes.Sockets)]
 public class WebSocketQuery : EndpointBaseAsync.WithoutRequest.WithoutResult
 {
     private readonly ILogger<WebSocketQuery> _logger;
@@ -24,19 +24,15 @@ public class WebSocketQuery : EndpointBaseAsync.WithoutRequest.WithoutResult
         Tags = new[] { Routes.Sockets})
     ]
     [ProducesErrorResponseType(typeof(BadRequestObjectResult))]
-    public override  async Task HandleAsync(CancellationToken cancellationToken = new CancellationToken())
+    public override  async Task<IActionResult> HandleAsync(CancellationToken cancellationToken = new CancellationToken())
     {
-        //let ws = new WebSocket('wss://localhost:5001/ws');
-        if (HttpContext.WebSockets.IsWebSocketRequest)
-        {
-            using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
-            _logger.Log(LogLevel.Information, "WebSocket connection established");
-            await Echo(webSocket);
-        }
-        else
-        {
-            HttpContext.Response.StatusCode = (int) HttpStatusCode.BadRequest;
-        }
+        if (!HttpContext.WebSockets.IsWebSocketRequest) return BadRequest();
+        
+      
+        using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
+        _logger.Log(LogLevel.Information, "WebSocket connection established");
+        await Echo(webSocket);
+        return new OkResult();
     }
     private async Task Echo(WebSocket webSocket)
     {
@@ -46,9 +42,9 @@ public class WebSocketQuery : EndpointBaseAsync.WithoutRequest.WithoutResult
 
         while (!result.CloseStatus.HasValue)
         {
-            var serverMsg = Encoding.UTF8.GetBytes($"Client Message: {Encoding.UTF8.GetString(buffer)}");
+            var serverMsg = Encoding.UTF8.GetBytes($"Server Response to: {Encoding.UTF8.GetString(buffer)}");
             await webSocket.SendAsync(new ArraySegment<byte>(serverMsg, 0, serverMsg.Length), result.MessageType, result.EndOfMessage, CancellationToken.None);
-            _logger.Log(LogLevel.Information, "Message sent to Client");
+            _logger.Log(LogLevel.Information, "Sent Response back to client confirming message received");
 
             buffer = new byte[1024 * 4];
             result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
