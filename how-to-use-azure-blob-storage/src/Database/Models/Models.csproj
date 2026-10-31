@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.11.4" />
     <PackageReference Include="Threenine.Database.Configuration" Version="1.0.4" />
   </ItemGroup>
   <ItemGroup>
